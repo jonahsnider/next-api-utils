@@ -1,15 +1,16 @@
 {
 	"compilerOptions": {
+		"declaration": true,
 		"exactOptionalPropertyTypes": false,
 		"inlineSourceMap": true,
 		"inlineSources": true,
-		"module": "node16",
+		"lib": ["dom", "dom.iterable", "esnext"],
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"outDir": "tsc_output",
+		"outDir": "dist",
 		"resolveJsonModule": true
 	},
-	"exclude": ["node_modules", "coverage"],
-	"extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/node18/tsconfig.json"],
-	"include": ["src", "test"]
+	"exclude": ["node_modules"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/node18"],
+	"include": ["src", "./next-end.d.ts"]
 }

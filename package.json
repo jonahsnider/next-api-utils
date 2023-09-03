@@ -1,18 +1,19 @@
 {
-	"name": "typescript-starter",
+	"name": "nextjs-api-utils",
 	"version": "1.0.0",
 	"private": true,
-	"description": "My personal TypeScript starter template.",
+	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
 	"keywords": [
-		"typescript",
-		"starter"
+		"nextjs",
+		"next",
+		"api"
 	],
 	"bugs": {
-		"url": "https://github.com/jonahsnider/typescript-starter/issues"
+		"url": "https://github.com/jonahsnider/nextjs-api-utils/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jonahsnider/typescript-starter.git"
+		"url": "git+https://github.com/jonahsnider/nextjs-api-utils.git"
 	},
 	"license": "Apache-2.0",
 	"author": {
@@ -21,28 +22,44 @@
 		"url": "https://jonahsnider.com"
 	},
 	"type": "module",
-	"exports": "./tsc_output/src/index.js",
-	"main": "./tsc_output/src/index.js",
+	"exports": "./dist/index.js",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsc",
-		"lint": "xo",
-		"style": "prettier --check .",
-		"test": "ava",
-		"test:coverage": "c8 --reporter lcov --reporter text-summary --100 --include 'src/**/*.ts' --exclude 'src/types/**/*.ts' --all ava"
+		"lint": "biome check src",
+		"lint:fix": "biome check src --apply",
+		"validate-api": "api-extractor run",
+		"validate-api:local": "api-extractor run --local --verbose"
 	},
 	"prettier": "@jonahsnider/prettier-config",
+	"dependencies": {
+		"@jonahsnider/util": "10.0.2",
+		"yn": "5.0.0",
+		"zod": "^3.22.2",
+		"zod-validation-error": "^1.5.0"
+	},
 	"devDependencies": {
+		"@biomejs/biome": "1.0.0",
 		"@jonahsnider/prettier-config": "1.1.2",
-		"@jonahsnider/xo-config": "5.3.0",
+		"@microsoft/api-extractor": "7.36.4",
 		"@tsconfig/node18": "18.2.1",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/node": "18.17.14",
-		"ava": "5.3.1",
-		"c8": "8.0.1",
+		"next": "13.4.19",
 		"prettier": "3.0.3",
-		"ts-node": "TypeStrong/ts-node",
-		"typescript": "5.2.2",
-		"xo": "0.56.0"
+		"typescript": "5.2.2"
+	},
+	"peerDependencies": {
+		"next": "^13"
+	},
+	"peerDependenciesMeta": {
+		"next": {
+			"optional": false
+		}
 	},
 	"packageManager": "yarn@3.6.3"
 }
