@@ -22,17 +22,17 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 
 // Warning: (ae-forgotten-export) The symbol "BaseHttpException" needs to be exported by the entry point index.d.ts
 //
-// @public (undocumented)
+// @public
 export class InvalidBodyException extends BaseHttpException {
     constructor(zodError: z.ZodError<unknown>);
 }
 
-// @public (undocumented)
+// @public
 export class InvalidPathParametersException extends BaseHttpException {
     constructor(zodError: z.ZodError<unknown>);
 }
 
-// @public (undocumented)
+// @public
 export class InvalidQueryParametersException extends BaseHttpException {
     constructor(zodError: z.ZodError<unknown>);
 }
