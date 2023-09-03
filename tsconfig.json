@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"exactOptionalPropertyTypes": false,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"module": "node16",
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"outDir": "tsc_output",
+		"resolveJsonModule": true
+	},
+	"exclude": ["node_modules", "coverage"],
+	"extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/node18/tsconfig.json"],
+	"include": ["src", "test"]
+}
