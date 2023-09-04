@@ -3,10 +3,18 @@
 	"formatter": {
 		"lineWidth": 120
 	},
+	"files": {
+		"ignore": ["dist", "node_modules", "temp"]
+	},
 	"javascript": {
 		"formatter": {
 			"jsxQuoteStyle": "single",
 			"quoteStyle": "single"
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
 		}
 	},
 	"linter": {

@@ -30,8 +30,8 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"lint": "biome check src",
-		"lint:fix": "biome check src --apply",
+		"lint": "biome check .",
+		"lint:fix": "biome check . --apply",
 		"validate-api": "api-extractor run",
 		"validate-api:local": "api-extractor run --local --verbose"
 	},
