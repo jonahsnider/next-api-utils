@@ -41,7 +41,7 @@ export class InvalidQueryParametersException extends BaseHttpException {
 export type IsException<Exception extends BaseException<unknown>> = (error: unknown) => error is Exception;
 
 // @public
-export type NextRouteHandler<ResponseBody = object, Context extends NextRouteHandlerContext = NextRouteHandlerContext> = (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
+export type NextRouteHandler<ResponseBody = unknown, Context extends NextRouteHandlerContext = NextRouteHandlerContext> = (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
 
 // @public
 export type NextRouteHandlerContext<PathParameters extends Record<string, string> = Record<never, never>> = {

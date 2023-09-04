@@ -19,6 +19,6 @@ export type NextRouteHandlerContext<PathParameters extends Record<string, string
  */
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextRouteHandler<
-	ResponseBody = object,
+	ResponseBody = unknown,
 	Context extends NextRouteHandlerContext = NextRouteHandlerContext,
 > = (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
