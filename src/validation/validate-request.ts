@@ -71,20 +71,3 @@ export async function validateRequest<T extends RequestSchema>(
 		params: undefined,
 	};
 }
-
-async function oomf(request: NextRequest, context: NextRouteHandlerContext) {
-	const { query, params, body } = await validateRequest(request, context, {
-		query: z.object({
-			foo: z.string(),
-			bar: z.number(),
-		}),
-		params: z.object({
-			foo: z.string(),
-			bar: z.number(),
-		}),
-		body: z.object({
-			foo: z.string(),
-			bar: z.number(),
-		}),
-	});
-}
