@@ -4,12 +4,7 @@
 	"name": "Node.js & TypeScript",
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
 
-	"extensions": [
-		"editorconfig.editorconfig",
-		"esbenp.prettier-vscode",
-		"biomejs.biome",
-		"redhat.vscode-yaml"
-	],
+	"extensions": ["editorconfig.editorconfig", "esbenp.prettier-vscode", "biomejs.biome", "redhat.vscode-yaml"],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

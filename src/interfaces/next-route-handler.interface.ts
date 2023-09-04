@@ -1,4 +1,4 @@
-import { type NextRequest, type NextResponse } from 'next/server.js';
+import type { NextRequest, NextResponse } from 'next/server.js';
 
 /**
  * The context object passed to a Next.js API route handler as the second parameter.

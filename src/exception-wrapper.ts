@@ -1,7 +1,7 @@
-import { type NextResponse } from 'next/server.js';
+import type { NextResponse } from 'next/server.js';
 import { TO_RESPONSE } from './constants.js';
 import { BaseHttpException } from './exceptions/base.exception.js';
-import { type NextRouteHandler } from './interfaces/next-route-handler.interface.js';
+import type { NextRouteHandler } from './interfaces/next-route-handler.interface.js';
 
 /**
  * A base interface for representing known application exceptions which should be sent to the client when thrown.

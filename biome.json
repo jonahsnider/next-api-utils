@@ -18,9 +18,14 @@
 		}
 	},
 	"linter": {
-		"enabled": true,
 		"rules": {
-			"recommended": true
+			"all": true,
+			"style": {
+				"noParameterProperties": "off"
+			},
+			"correctness": {
+				"noUnusedVariables": "off"
+			}
 		}
 	}
 }

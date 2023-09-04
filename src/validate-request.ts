@@ -1,10 +1,10 @@
 import querystring from 'node:querystring';
-import { type NextRequest } from 'next/server.js';
-import { type Schema, type z } from 'zod';
+import type { NextRequest } from 'next/server.js';
+import type { Schema, z } from 'zod';
 import { InvalidBodyException } from './exceptions/invalid-body.exception.js';
 import { InvalidPathParametersException } from './exceptions/invalid-path-parameters.exception.js';
 import { InvalidQueryParametersException } from './exceptions/invalid-query-parameters.exception.js';
-import { type NextRouteHandlerContext } from './interfaces/next-route-handler.interface.js';
+import type { NextRouteHandlerContext } from './interfaces/next-route-handler.interface.js';
 
 /**
  * Validate the query parameters in a request with a Zod schema.
