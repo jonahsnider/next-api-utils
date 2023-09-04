@@ -2,6 +2,7 @@ import type { NextResponse } from 'next/server.js';
 import { TO_RESPONSE } from '../constants.js';
 import type { NextRouteHandler } from '../interfaces/next-route-handler.interface.js';
 import { BaseValidationException } from '../validation/exceptions/base-validation.exception.js';
+import { NextRouteHandlerContext } from '../index.js';
 
 /**
  * A base interface for representing known application exceptions which should be sent to the client when thrown.
@@ -38,8 +39,10 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 	 * @param route - The route handler function to wrap
 	 * @returns A wrapped version of the route handler
 	 */
-	async wrapRoute<Route extends NextRouteHandler<Exception>>(route: Route) {
-		return async (...parameters: Parameters<Route>) => {
+	wrapRoute<ResponseBody, Context extends NextRouteHandlerContext = NextRouteHandlerContext>(
+		route: NextRouteHandler<ResponseBody, Context>,
+	) {
+		return async (...parameters: Parameters<NextRouteHandler<ResponseBody, Context>>) => {
 			try {
 				return await route.apply(route, parameters);
 			} catch (error) {

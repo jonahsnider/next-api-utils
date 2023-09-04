@@ -40,7 +40,7 @@ export enum _ExceptionCode {
 // @public
 export class ExceptionWrapper<Exception extends BaseException<unknown>> {
     constructor(isException: IsException<Exception>);
-    wrapRoute<Route extends NextRouteHandler<Exception>>(route: Route): Promise<(...parameters: Parameters<Route>) => Promise<NextResponse<unknown>>>;
+    wrapRoute<ResponseBody, Context extends NextRouteHandlerContext = NextRouteHandlerContext>(route: NextRouteHandler<ResponseBody, Context>): (request: NextRequest, context: Context) => Promise<NextResponse<unknown>>;
 }
 
 // @public
