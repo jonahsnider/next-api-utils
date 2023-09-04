@@ -8,3 +8,5 @@ export * from './exceptions/invalid-query-parameters.exception.js';
 export * from './validate-body.js';
 export * from './validate-params.js';
 export * from './validate-request.js';
+export * from './interfaces/parsed-request.interface.js';
+export * from './interfaces/request-schema.interface.js';

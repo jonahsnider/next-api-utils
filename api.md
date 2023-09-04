@@ -70,10 +70,27 @@ export type NextRouteHandlerContext<PathParameters extends Record<string, string
 };
 
 // @public
+export type ParsedRequest<RequestBody = never, QueryParameters extends undefined | Record<string, unknown> = never, PathParameters extends undefined | Record<string, string | string[]> = never> = {
+    body: never extends RequestBody ? undefined : RequestBody;
+    query: never extends QueryParameters ? undefined : QueryParameters;
+    params: never extends PathParameters ? undefined : PathParameters;
+};
+
+// @public
 export const QueryBooleanSchema: z.ZodPipeline<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodBoolean]>, boolean | undefined, string | boolean>, z.ZodBoolean>;
 
 // @public
 export type QueryBooleanSchema = z.infer<typeof QueryBooleanSchema>;
+
+// @public
+export type RequestSchema<RequestBody extends z.Schema | undefined = never, QueryParameters extends z.Schema | undefined = never, PathParameters extends z.Schema | undefined = never> = {
+    body: never extends RequestBody ? undefined : RequestBody;
+    query: never extends QueryParameters ? undefined : QueryParameters;
+    params: never extends PathParameters ? undefined : PathParameters;
+};
+
+// @public
+export type RequestSchemaToParsedRequest<T extends RequestSchema> = ParsedRequest<z.infer<T['body']>, z.infer<T['query']>, z.infer<T['params']>>;
 
 // @public
 export const TO_RESPONSE: unique symbol;
@@ -87,16 +104,11 @@ export function validateParams<T extends Schema>(context: NextRouteHandlerContex
 // @public
 export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T>;
 
-// Warning: (ae-forgotten-export) The symbol "RequestSchema" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "RequestSchemaToParsedRequest" needs to be exported by the entry point index.d.ts
-//
 // @public
-export function validateRequest<T extends RequestSchema & {
-    params?: undefined;
-}>(request: NextRequest, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
+export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, never>>(request: NextRequest, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
 
-// @public (undocumented)
-export function validateRequest<T extends RequestSchema>(request: NextRequest, context: NextRouteHandlerContext, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
+// @public
+export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, z.Schema>>(request: NextRequest, context: NextRouteHandlerContext, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
 
 // @public
 export const ValidationExceptionSchema: z.ZodObject<{

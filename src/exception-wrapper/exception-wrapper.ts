@@ -33,7 +33,7 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 	/**
 	 * Wrap a route handler to catch known exceptions and send them to the client.
 	 *
-	 * If an exception is encountered that does not match the {@link isException} function, it will be rethrown.
+	 * If an exception is encountered that does not match the {@link ExceptionWrapper#isException} function, it will be rethrown.
 	 *
 	 * @param route - The route handler function to wrap
 	 * @returns A wrapped version of the route handler

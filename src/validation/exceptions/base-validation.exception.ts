@@ -7,8 +7,6 @@ import type { ExceptionCode } from '../enums/exceptions.enum.js';
 /**
  * The base class that exceptions thrown during validation inherit from.
  *
- * Follows the Zod schema {@link ValidationExceptionSchema}.
- *
  * @public
  */
 export class BaseValidationException extends Error implements ValidationExceptionSchema {
