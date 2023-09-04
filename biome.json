@@ -22,9 +22,6 @@
 			"all": true,
 			"style": {
 				"noParameterProperties": "off"
-			},
-			"correctness": {
-				"noUnusedVariables": "off"
 			}
 		}
 	}

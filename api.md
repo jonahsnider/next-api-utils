@@ -4,9 +4,9 @@
 
 ```ts
 
-import { NextRequest } from 'next/server.js';
+import type { NextRequest } from 'next/server.js';
 import { NextResponse } from 'next/server.js';
-import { Schema } from 'zod';
+import type { Schema } from 'zod';
 import { z } from 'zod';
 
 // @public

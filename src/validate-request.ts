@@ -8,7 +8,7 @@ import type { NextRouteHandlerContext } from './interfaces/next-route-handler.in
 
 /**
  * Validate the query parameters in a request with a Zod schema.
- * @param request - The {@link NextRequest} object to validate the query parameters for
+ * @param request - The {@link next/server#NextRequest} object to validate the query parameters for
  * @param schema - The Zod schema to validate the query parameters against
  * @returns The validated query parameters
  *
@@ -55,7 +55,7 @@ export function validateParams<T extends Schema>(context: NextRouteHandlerContex
 
 /**
  * Validate the body in a request with a Zod schema.
- * @param request - The {@link NextRequest} object to validate the body for
+ * @param request - The {@link next/server#NextRequest} object to validate the body for
  * @param schema - The Zod schema to validate the body against
  * @returns The validated body
  *

@@ -9,7 +9,7 @@ import type { NextRouteHandler } from './interfaces/next-route-handler.interface
  * @public
  */
 export type BaseException<T> = {
-	/** A function that converts this exception to a {@link NextResponse} containing information about the exception. */
+	/** A function that converts this exception to a {@link next/server#NextResponse} containing information about the exception. */
 	[TO_RESPONSE]: () => NextResponse<T>;
 };
 
