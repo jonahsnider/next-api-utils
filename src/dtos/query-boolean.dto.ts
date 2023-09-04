@@ -21,6 +21,10 @@ export const QueryBooleanSchema = z
 	.transform((raw) => yn(raw))
 	.pipe(z.boolean());
 
-/** @public */
+/**
+ * The inferred type of QueryBooleanSchema.
+ *
+ * @public
+ */
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export type QueryBooleanSchema = z.infer<typeof QueryBooleanSchema>;

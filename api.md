@@ -51,7 +51,7 @@ export type NextRouteHandlerContext<PathParameters extends Record<string, string
 // @public
 export const QueryBooleanSchema: z.ZodPipeline<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodBoolean]>, boolean | undefined, string | boolean>, z.ZodBoolean>;
 
-// @public (undocumented)
+// @public
 export type QueryBooleanSchema = z.infer<typeof QueryBooleanSchema>;
 
 // @public
