@@ -233,3 +233,6 @@ $RECYCLE.BIN/
 
 # API Extractor
 temp
+
+# TypeDoc
+docs

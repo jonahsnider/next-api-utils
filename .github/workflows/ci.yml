@@ -26,6 +26,29 @@ jobs:
         with:
           name: dist
           path: dist
+  docs:
+    name: Generate docs
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'yarn'
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Generate docs
+        run: yarn run docs
+      - name: Upload compiled TypeScript
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs
   lint:
     name: Lint
 

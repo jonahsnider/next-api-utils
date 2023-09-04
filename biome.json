@@ -4,7 +4,7 @@
 		"lineWidth": 120
 	},
 	"files": {
-		"ignore": ["dist", "node_modules", "temp"]
+		"ignore": ["dist", "node_modules", "temp", "docs"]
 	},
 	"javascript": {
 		"formatter": {
