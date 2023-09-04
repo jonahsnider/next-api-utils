@@ -1,7 +1,7 @@
 import type { NextResponse } from 'next/server.js';
-import { TO_RESPONSE } from './constants.js';
-import { BaseHttpException } from './exceptions/base.exception.js';
-import type { NextRouteHandler } from './interfaces/next-route-handler.interface.js';
+import { TO_RESPONSE } from '../constants.js';
+import type { NextRouteHandler } from '../interfaces/next-route-handler.interface.js';
+import { BaseValidationException } from '../validation/exceptions/base-validation.exception.js';
 
 /**
  * A base interface for representing known application exceptions which should be sent to the client when thrown.
@@ -23,6 +23,8 @@ export type IsException<Exception extends BaseException<unknown>> = (error: unkn
 /**
  * A class for wrapping Next.js API route handlers to catch known application exceptions which should be sent to the client when thrown.
  *
+ * Automatically catches {@link BaseValidationException} exceptions from {@link validateQuery}, {@link validateParams}, and {@link validateBody}.
+ *
  * @public
  */
 export class ExceptionWrapper<Exception extends BaseException<unknown>> {
@@ -30,6 +32,8 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 
 	/**
 	 * Wrap a route handler to catch known exceptions and send them to the client.
+	 *
+	 * If an exception is encountered that does not match the {@link isException} function, it will be rethrown.
 	 *
 	 * @param route - The route handler function to wrap
 	 * @returns A wrapped version of the route handler
@@ -39,7 +43,7 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 			try {
 				return await route.apply(route, parameters);
 			} catch (error) {
-				if (this.isException(error) || error instanceof BaseHttpException) {
+				if (this.isException(error) || error instanceof BaseValidationException) {
 					return error[TO_RESPONSE]();
 				}
 

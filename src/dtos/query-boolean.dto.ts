@@ -26,5 +26,4 @@ export const QueryBooleanSchema = z
  *
  * @public
  */
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type QueryBooleanSchema = z.infer<typeof QueryBooleanSchema>;

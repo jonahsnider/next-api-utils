@@ -4,7 +4,7 @@
 
 ```ts
 
-import type { NextRequest } from 'next/server.js';
+import { NextRequest } from 'next/server.js';
 import { NextResponse } from 'next/server.js';
 import type { Schema } from 'zod';
 import { z } from 'zod';
@@ -15,25 +15,46 @@ export type BaseException<T> = {
 };
 
 // @public
+export class BaseValidationException extends Error implements ValidationExceptionSchema {
+    // (undocumented)
+    [TO_RESPONSE](): NextResponse<ValidationExceptionSchema>;
+    constructor(message: string, statusCode: number, code: _ExceptionCode | undefined);
+    // (undocumented)
+    readonly code: _ExceptionCode | undefined;
+    // (undocumented)
+    readonly error: string;
+    // (undocumented)
+    readonly statusCode: number;
+}
+
+// @public
+export enum _ExceptionCode {
+    // (undocumented)
+    InvalidBody = "E_INVALID_BODY",
+    // (undocumented)
+    InvalidPathParameters = "E_INVALID_PATH_PARAMS",
+    // (undocumented)
+    InvalidQueryParameters = "E_INVALID_QUERY_PARAMS"
+}
+
+// @public
 export class ExceptionWrapper<Exception extends BaseException<unknown>> {
     constructor(isException: IsException<Exception>);
     wrapRoute<Route extends NextRouteHandler<Exception>>(route: Route): Promise<(...parameters: Parameters<Route>) => Promise<NextResponse<unknown>>>;
 }
 
-// Warning: (ae-forgotten-export) The symbol "BaseHttpException" needs to be exported by the entry point index.d.ts
-//
 // @public
-export class InvalidBodyException extends BaseHttpException {
+export class InvalidBodyException extends BaseValidationException {
     constructor(zodError: z.ZodError<unknown>);
 }
 
 // @public
-export class InvalidPathParametersException extends BaseHttpException {
+export class InvalidPathParametersException extends BaseValidationException {
     constructor(zodError: z.ZodError<unknown>);
 }
 
 // @public
-export class InvalidQueryParametersException extends BaseHttpException {
+export class InvalidQueryParametersException extends BaseValidationException {
     constructor(zodError: z.ZodError<unknown>);
 }
 
@@ -65,6 +86,38 @@ export function validateParams<T extends Schema>(context: NextRouteHandlerContex
 
 // @public
 export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T>;
+
+// Warning: (ae-forgotten-export) The symbol "RequestSchema" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "RequestSchemaToParsedRequest" needs to be exported by the entry point index.d.ts
+//
+// @public
+export function validateRequest<T extends RequestSchema & {
+    params?: undefined;
+}>(request: NextRequest, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
+
+// @public (undocumented)
+export function validateRequest<T extends RequestSchema>(request: NextRequest, context: NextRouteHandlerContext, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
+
+// @public
+export const ValidationExceptionSchema: z.ZodObject<{
+    message: z.ZodString;
+    code: z.ZodOptional<z.ZodNativeEnum<typeof _ExceptionCode>>;
+    statusCode: z.ZodNumber;
+    error: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    message: string;
+    statusCode: number;
+    error: string;
+    code?: _ExceptionCode | undefined;
+}, {
+    message: string;
+    statusCode: number;
+    error: string;
+    code?: _ExceptionCode | undefined;
+}>;
+
+// @public
+export type ValidationExceptionSchema = z.infer<typeof ValidationExceptionSchema>;
 
 // (No @packageDocumentation comment for this package)
 

@@ -1,13 +1,5 @@
 import type { NextRequest, NextResponse } from 'next/server.js';
-
-/**
- * The context object passed to a Next.js API route handler as the second parameter.
- *
- * @public
- */
-export type NextRouteHandlerContext<PathParameters extends Record<string, string> = Record<never, never>> = {
-	params: PathParameters;
-};
+import { NextRouteHandlerContext } from './next-route-handler-context.interface.js';
 
 /**
  * A type for representing a Next.js API route handler function.
@@ -17,7 +9,6 @@ export type NextRouteHandlerContext<PathParameters extends Record<string, string
  *
  * @public
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
 export type NextRouteHandler<
 	ResponseBody = unknown,
 	Context extends NextRouteHandlerContext = NextRouteHandlerContext,
