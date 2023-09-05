@@ -1,4 +1,4 @@
-import querystring from 'node:querystring';
+import querystring from 'querystring';
 import type { NextRequest } from 'next/server.js';
 import type { Schema, z } from 'zod';
 import { InvalidQueryParametersException } from './exceptions/invalid-query-parameters.exception.js';

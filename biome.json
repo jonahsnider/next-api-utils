@@ -1,16 +1,17 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
-	"formatter": {
-		"lineWidth": 120
-	},
 	"files": {
 		"ignore": ["dist", "node_modules", "temp", "docs"]
+	},
+	"formatter": {
+		"lineWidth": 120
 	},
 	"javascript": {
 		"formatter": {
 			"jsxQuoteStyle": "single",
 			"quoteStyle": "single"
-		}
+		},
+		"globals": ["React"]
 	},
 	"json": {
 		"parser": {
@@ -21,6 +22,7 @@
 		"rules": {
 			"all": true,
 			"style": {
+				"all": true,
 				"noParameterProperties": "off"
 			}
 		}

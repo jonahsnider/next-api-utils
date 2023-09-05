@@ -1,4 +1,4 @@
-import { STATUS_CODES } from 'node:http';
+import { STATUS_CODES } from 'http';
 import { NextResponse } from 'next/server.js';
 import { TO_RESPONSE } from '../../constants.js';
 import type { ValidationExceptionSchema } from '../dtos/exception.dto.js';
