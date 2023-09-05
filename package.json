@@ -1,11 +1,11 @@
 {
-	"name": "nextjs-api-utils",
-	"version": "1.0.0",
+	"name": "@jonahsnider/nextjs-api-utils",
+	"version": "1.0.2",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
 	"keywords": [
-		"nextjs",
+		"api",
 		"next",
-		"api"
+		"nextjs"
 	],
 	"bugs": {
 		"url": "https://github.com/jonahsnider/nextjs-api-utils/issues"
@@ -21,14 +21,27 @@
 		"url": "https://jonahsnider.com"
 	},
 	"type": "module",
-	"exports": "./dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./server": {
+			"types": "./dist/server.d.ts",
+			"import": "./dist/server.js"
+		},
+		"./client": {
+			"types": "./dist/client.d.ts",
+			"import": "./dist/client.js"
+		}
+	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
 	],
 	"scripts": {
-		"build": "tsc",
+		"build": "rm -rf dist && tsc",
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
@@ -38,7 +51,7 @@
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
 		"@jonahsnider/util": "10.0.2",
-		"yn": "5.0.0",
+		"yn": "4.0.0",
 		"zod": "^3.22.2",
 		"zod-validation-error": "^1.5.0"
 	},
@@ -61,6 +74,9 @@
 		"next": {
 			"optional": false
 		}
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"packageManager": "yarn@3.6.3"
 }

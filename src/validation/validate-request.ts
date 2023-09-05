@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server.js';
 import { z } from 'zod';
-import { NextRouteHandlerContext } from '../index.js';
+import { NextRouteHandlerContext } from '../server.js';
 import { ParsedRequest, RequestSchemaToParsedRequest } from './interfaces/parsed-request.interface.js';
 import { RequestSchema } from './interfaces/request-schema.interface.js';
 import { validateBody } from './validate-body.js';

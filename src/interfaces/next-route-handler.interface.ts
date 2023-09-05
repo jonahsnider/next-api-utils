@@ -12,4 +12,6 @@ import { NextRouteHandlerContext } from './next-route-handler-context.interface.
 export type NextRouteHandler<
 	ResponseBody = unknown,
 	Context extends NextRouteHandlerContext = NextRouteHandlerContext,
-> = (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
+> = NextRouteHandlerContext extends Context
+	? (request: NextRequest) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>
+	: (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
