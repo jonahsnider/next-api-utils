@@ -64,7 +64,7 @@
 		"@types/node": "18.17.14",
 		"next": "13.4.19",
 		"prettier": "3.0.3",
-		"typedoc": "0.25.0",
+		"typedoc": "0.25.1",
 		"typescript": "5.2.2"
 	},
 	"peerDependencies": {
