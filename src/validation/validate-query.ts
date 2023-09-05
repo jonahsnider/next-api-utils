@@ -1,7 +1,26 @@
-import querystring from 'querystring';
+import type { ParsedUrlQuery } from 'querystring';
 import type { NextRequest } from 'next/server.js';
 import type { Schema, z } from 'zod';
 import { InvalidQueryParametersException } from './exceptions/invalid-query-parameters.exception.js';
+
+/** @internal */
+export function extractQuery(url: URL): ParsedUrlQuery {
+	const query: ParsedUrlQuery = {};
+
+	const searchParams = url.searchParams;
+
+	for (const [key, value] of searchParams.entries()) {
+		const currentValue = query[key];
+		if (Array.isArray(currentValue)) {
+			currentValue.push(value);
+		} else if (currentValue) {
+			query[key] = [currentValue, value];
+		} else {
+			query[key] = value;
+		}
+	}
+	return query;
+}
 
 /**
  * Validate the query parameters in a request with a Zod schema.
@@ -16,7 +35,7 @@ import { InvalidQueryParametersException } from './exceptions/invalid-query-para
  * @public
  */
 export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T> {
-	const query = querystring.parse(new URL(request.url).search.slice('?'.length));
+	const query = extractQuery(new URL(request.url));
 
 	const result = schema.safeParse(query);
 
