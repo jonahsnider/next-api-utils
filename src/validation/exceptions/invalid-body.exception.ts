@@ -11,6 +11,6 @@ import { BaseValidationException } from './base-validation.exception.js';
  */
 export class InvalidBodyException extends BaseValidationException {
 	constructor(zodError: z.ZodError<unknown>) {
-		super(fromZodError(zodError).message, Http.Status.UnprocessableEntity, ExceptionCode.InvalidPathParameters);
+		super(fromZodError(zodError).message, Http.Status.UnprocessableEntity, ExceptionCode.InvalidBody);
 	}
 }
