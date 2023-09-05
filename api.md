@@ -4,6 +4,9 @@
 
 ```ts
 
+/// <reference types="node" />
+
+import { Http } from '@jonahsnider/util';
 import { NextRequest } from 'next/server.js';
 import { NextResponse } from 'next/server.js';
 import type { Schema } from 'zod';
@@ -18,13 +21,13 @@ export type BaseException<T> = {
 export class BaseValidationException extends Error implements ValidationExceptionSchema {
     // (undocumented)
     [TO_RESPONSE](): NextResponse<ValidationExceptionSchema>;
-    constructor(message: string, statusCode: number, code: _ExceptionCode | undefined);
+    constructor(message: string, statusCode: Http.Status, code: _ExceptionCode | undefined);
     // (undocumented)
     readonly code: _ExceptionCode | undefined;
     // (undocumented)
     readonly error: string;
     // (undocumented)
-    readonly statusCode: number;
+    readonly statusCode: Http.Status;
 }
 
 // @public

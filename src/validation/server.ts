@@ -5,5 +5,5 @@ export * from './exceptions/invalid-path-parameters.exception.js';
 export * from './exceptions/invalid-query-parameters.exception.js';
 export * from './validate-body.js';
 export * from './validate-params.js';
-export * from './validate-query.js';
+export { validateQuery } from './validate-query.js';
 export * from './validate-request.js';
