@@ -1,7 +1,7 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
 	"files": {
-		"ignore": ["dist", "node_modules", "temp", "docs"]
+		"ignore": ["dist", "node_modules", "temp", "docs", "coverage"]
 	},
 	"formatter": {
 		"lineWidth": 120

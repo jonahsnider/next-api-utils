@@ -45,6 +45,8 @@
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
+		"test": "vitest --run --no-isolate",
+		"test:coverage": "vitest --run --no-isolate --coverage",
 		"validate-api": "api-extractor run",
 		"validate-api:local": "api-extractor run --local --verbose"
 	},
@@ -62,10 +64,13 @@
 		"@tsconfig/node18": "18.2.1",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/node": "18.17.14",
+		"@vitest/coverage-v8": "0.34.3",
+		"@vitest/ui": "0.34.3",
 		"next": "13.4.19",
 		"prettier": "3.0.3",
 		"typedoc": "0.25.1",
-		"typescript": "5.2.2"
+		"typescript": "5.2.2",
+		"vitest": "0.34.3"
 	},
 	"peerDependencies": {
 		"next": "^13"
