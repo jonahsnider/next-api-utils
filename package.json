@@ -1,6 +1,6 @@
 {
 	"name": "@jonahsnider/nextjs-api-utils",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
 	"keywords": [
 		"api",
@@ -51,7 +51,7 @@
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
 		"@jonahsnider/util": "10.0.2",
-		"yn": "4.0.0",
+		"yn": "5.0.0",
 		"zod": "^3.22.2",
 		"zod-validation-error": "^1.5.0"
 	},
