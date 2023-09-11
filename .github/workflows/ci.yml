@@ -90,11 +90,10 @@ jobs:
           steps:
             - name: Checkout Git repository
               uses: actions/checkout@v4
-            - name: Setup Node.js
-              uses: actions/setup-node@v3
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v1
               with:
-                node-version: '18'
-                cache: 'yarn'
+                bun-version: "1.0.0"
             - name: Install dependencies with Bun
               run: bun install --frozen-lockfile
             - name: Build package
