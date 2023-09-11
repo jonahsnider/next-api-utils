@@ -2,11 +2,7 @@
 	"name": "@jonahsnider/nextjs-api-utils",
 	"version": "1.0.4",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
-	"keywords": [
-		"api",
-		"next",
-		"nextjs"
-	],
+	"keywords": ["api", "next", "nextjs"],
 	"bugs": {
 		"url": "https://github.com/jonahsnider/nextjs-api-utils/issues"
 	},
@@ -37,16 +33,15 @@
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
-		"build": "rm -rf dist && tsc",
+		"prebuild": "rm -rf dist",
+		"build": "tsc",
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
-		"test": "vitest --run --no-isolate",
-		"test:coverage": "vitest --run --no-isolate --coverage",
+		"test": "bun test src",
+		"test:coverage": "bun run test --coverage",
 		"validate-api": "api-extractor run",
 		"validate-api:local": "api-extractor run --local --verbose"
 	},
@@ -61,15 +56,12 @@
 		"@biomejs/biome": "1.1.2",
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@microsoft/api-extractor": "7.36.4",
-		"@tsconfig/node18": "18.2.1",
+		"@tsconfig/bun": "1.0.0",
 		"@tsconfig/strictest": "2.0.2",
-		"@types/node": "18.17.15",
-		"@vitest/coverage-v8": "0.34.4",
-		"@vitest/ui": "0.34.4",
+		"bun-types": "1.0.1",
 		"next": "13.4.19",
 		"typedoc": "0.25.1",
-		"typescript": "5.2.2",
-		"vitest": "0.34.4"
+		"typescript": "5.2.2"
 	},
 	"peerDependencies": {
 		"next": "^13"
@@ -79,7 +71,7 @@
 			"optional": false
 		}
 	},
-	"packageManager": "yarn@3.6.3",
+	"packageManager": "bun@1.0.0",
 	"publishConfig": {
 		"access": "public"
 	}

@@ -1,16 +1,18 @@
 {
 	"compilerOptions": {
+		"allowImportingTsExtensions": false,
 		"declaration": true,
 		"exactOptionalPropertyTypes": false,
 		"inlineSourceMap": true,
 		"inlineSources": true,
 		"lib": ["dom", "dom.iterable", "esnext"],
+		"noEmit": false,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"outDir": "dist",
 		"resolveJsonModule": true
 	},
 	"exclude": ["node_modules"],
-	"extends": ["@tsconfig/strictest", "@tsconfig/node18"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/bun"],
 	"include": ["src", "./next-end.d.ts"]
 }

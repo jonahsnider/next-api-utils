@@ -1,6 +1,6 @@
-import { expect, test } from 'vitest';
 import { z } from 'zod';
 import { extractQuery, validateQuery } from './validate-query.js';
+import { expect, test } from 'bun:test';
 
 import querystring from 'node:querystring';
 test('validates query parameters', () => {
