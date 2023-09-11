@@ -4,6 +4,7 @@
 		"ignore": ["dist", "node_modules", "temp", "docs", "coverage"]
 	},
 	"formatter": {
+		"formatWithErrors": true,
 		"lineWidth": 120
 	},
 	"javascript": {
