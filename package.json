@@ -1,6 +1,6 @@
 {
 	"name": "next-api-utils",
-	"version": "1.0.4",
+	"version": "0.0.0-development",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
 	"keywords": ["api", "next", "nextjs"],
 	"bugs": {
@@ -40,6 +40,7 @@
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
+		"release": "semantic-release",
 		"test": "bun test src",
 		"test:coverage": "bun run test --coverage",
 		"validate-api": "api-extractor run",
@@ -60,6 +61,7 @@
 		"@tsconfig/strictest": "2.0.2",
 		"bun-types": "1.0.1",
 		"next": "13.4.19",
+		"semantic-release": "22.0.0",
 		"typedoc": "0.25.1",
 		"typescript": "5.2.2"
 	},
