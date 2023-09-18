@@ -1,14 +1,14 @@
 {
-	"name": "@jonahsnider/nextjs-api-utils",
+	"name": "next-api-utils",
 	"version": "1.0.4",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
 	"keywords": ["api", "next", "nextjs"],
 	"bugs": {
-		"url": "https://github.com/jonahsnider/nextjs-api-utils/issues"
+		"url": "https://github.com/jonahsnider/next-api-utils/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jonahsnider/nextjs-api-utils.git"
+		"url": "git+https://github.com/jonahsnider/next-api-utils.git"
 	},
 	"license": "Apache-2.0",
 	"author": {
