@@ -34,7 +34,7 @@
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": ["dist", "!dist/**/*.test.{js,d.ts}"],
 	"scripts": {
 		"prebuild": "rm -rf dist",
 		"build": "tsc",
