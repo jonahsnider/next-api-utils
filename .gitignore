@@ -227,3 +227,6 @@ temp
 
 # TypeDoc
 docs
+
+# Vercel
+.vercel
