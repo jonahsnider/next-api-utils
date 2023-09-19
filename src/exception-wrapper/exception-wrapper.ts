@@ -9,7 +9,7 @@ import { BaseValidationException } from '../validation/exceptions/base-validatio
  *
  * @public
  */
-export type BaseException<T> = {
+export type BaseException<T = unknown> = {
 	/** A function that converts this exception to a {@link next/server#NextResponse} containing information about the exception. */
 	[TO_RESPONSE]: () => NextResponse<T>;
 };

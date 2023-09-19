@@ -14,7 +14,7 @@ import type { Schema } from 'zod';
 import { z } from 'zod';
 
 // @public
-export type BaseException<T> = {
+export type BaseException<T = unknown> = {
     [TO_RESPONSE]: () => NextResponse<T>;
 };
 
