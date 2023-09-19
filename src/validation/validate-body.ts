@@ -4,6 +4,18 @@ import { InvalidBodyException } from './exceptions/invalid-body.exception.js';
 
 /**
  * Validate the body in a request with a Zod schema.
+ * Throws an exception if the body does not match the schema.
+ * You can use {@link ExceptionWrapper} to automatically catch the exception and send it to the client.
+ *
+ * @example
+ * ```ts
+ * import { validateBody } from 'next-api-utils';
+ * import { z } from 'zod';
+ *
+ * export const POST = (request) => {
+ *   const body = validateBody(request, z.object({ foo: z.string() }));
+ * };
+ * ```
  *
  * @param request - The {@link next/server#NextRequest} object to validate the body for
  * @param schema - The Zod schema to validate the body against

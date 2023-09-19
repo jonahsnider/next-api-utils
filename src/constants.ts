@@ -1,5 +1,5 @@
 /**
- * A symbol used to identify the method to convert a {@link BaseException | known application exception} to a {@link next/server#NextResponse}.
+ * A symbol used by {@link ExceptionWrapper} to identify the method to convert a {@link BaseException | known application exception} to a {@link next/server#NextResponse}.
  *
  * @public
  */

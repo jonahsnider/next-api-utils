@@ -4,6 +4,18 @@ import { InvalidPathParametersException } from './exceptions/invalid-path-parame
 
 /**
  * Validate the path parameters in a request with a Zod schema.
+ * Throws an exception if the query parameters do not match the schema.
+ * You can use {@link ExceptionWrapper} to automatically catch the exception and send it to the client.
+ *
+ * @example
+ * ```ts
+ * import { validateParams } from 'next-api-utils';
+ * import { z } from 'zod';
+ *
+ * export const GET = (request, context) => {
+ *   const params = validateParams(context, z.object({ foo: z.string() }));
+ * };
+ * ```
  *
  * @param context - The {@link NextRouteHandlerContext} object to validate the path parameters for
  * @param schema - The Zod schema to validate the path parameters against

@@ -10,6 +10,7 @@
 		"type": "git",
 		"url": "git+https://github.com/jonahsnider/next-api-utils.git"
 	},
+	"homepage": "https://next-api-utils.jonahsnider.dev",
 	"license": "Apache-2.0",
 	"author": {
 		"name": "Jonah Snider",

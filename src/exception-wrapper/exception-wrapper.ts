@@ -26,10 +26,40 @@ export type IsException<Exception extends BaseException<unknown>> = (error: unkn
  *
  * Automatically catches {@link BaseValidationException} exceptions from {@link validateQuery}, {@link validateParams}, and {@link validateBody}.
  *
+ * @example
+ * ```ts
+ * // exception-route-wrapper.ts
+ *
+ * import { ExceptionWrapper } from 'next-api-utils';
+ * import { CustomException } from './custom-exception';
+ *
+ * function isException(maybeException: unknown): maybeException is CustomException {
+ *   return maybeException instanceof CustomException;
+ * }
+ *
+ * export const exceptionRouteWrapper = new ExceptionWrapper(isException);
+ * ```
+ *
+ * ```ts
+ * // route.ts
+ *
+ * import { NextResponse } from 'next/server';
+ * import { exceptionRouteWrapper } from './exception-route-wrapper';
+ * import { MyResponseSchema } from './my-response-schema';
+ *
+ * export const GET = exceptionRouteWrapper.wrapRoute<MyResponseSchema>(() => {
+ *   return NextResponse.json({ foo: 'hello world' });
+ * });
+ * ```
+ *
  * @public
  */
 export class ExceptionWrapper<Exception extends BaseException<unknown>> {
-	constructor(private readonly isException: IsException<Exception>) {}
+	/**
+	 *
+	 * @param isException - A function that returns whether `error` is a known application exception that should be sent to the client when thrown. If not provided, only {@link BaseValidationException} exceptions will be caught.
+	 */
+	constructor(private readonly isException?: IsException<Exception>) {}
 
 	/**
 	 * Wrap a route handler to catch known exceptions and send them to the client.
@@ -47,7 +77,7 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 				// @ts-expect-error The arguments to route will be correct at runtime
 				return await route.apply(route, parameters);
 			} catch (error) {
-				if (this.isException(error) || error instanceof BaseValidationException) {
+				if (this.isException?.(error) || error instanceof BaseValidationException) {
 					return error[TO_RESPONSE]();
 				}
 

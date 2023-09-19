@@ -24,6 +24,18 @@ export function extractQuery(url: URL): ParsedUrlQuery {
 
 /**
  * Validate the query parameters in a request with a Zod schema.
+ * Throws an exception if the query parameters do not match the schema.
+ * You can use {@link ExceptionWrapper} to automatically catch the exception and send it to the client.
+ *
+ * @example
+ * ```ts
+ * import { validateQuery } from 'next-api-utils';
+ * import { z } from 'zod';
+ *
+ * export const GET = (request) => {
+ *   const query = validateQuery(request, z.object({ foo: z.string() }));
+ * };
+ * ```
  *
  * @param request - The {@link next/server#NextRequest} object to validate the query parameters for
  * @param schema - The Zod schema to validate the query parameters against
