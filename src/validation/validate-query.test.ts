@@ -1,8 +1,8 @@
+import { expect, test } from 'bun:test';
+import querystring from 'node:querystring';
 import { z } from 'zod';
 import { extractQuery, validateQuery } from './validate-query.js';
-import { expect, test } from 'bun:test';
 
-import querystring from 'node:querystring';
 test('validates query parameters', () => {
 	const request = {
 		url: new URL('http://localhost/?a=1&a=2&b=3').toString(),
