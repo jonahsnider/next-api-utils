@@ -4,7 +4,6 @@
 
 ```ts
 
-/// <reference types="bun-types" />
 /// <reference types="node" />
 
 import { Http } from '@jonahsnider/util';

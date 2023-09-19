@@ -10,9 +10,10 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"outDir": "dist",
-		"resolveJsonModule": true
+		"target": "es2017",
+		"module": "node16"
 	},
-	"exclude": ["node_modules"],
-	"extends": ["@tsconfig/strictest", "@tsconfig/bun"],
-	"include": ["src", "./next-end.d.ts"]
+	"exclude": ["node_modules", "./src/**/*.test.ts"],
+	"extends": ["@tsconfig/strictest"],
+	"include": ["src", "./next-env.d.ts"]
 }
