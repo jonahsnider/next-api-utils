@@ -11,10 +11,10 @@ import type { ExceptionCode } from '../enums/exceptions.enum.js';
  */
 export class BaseValidationException extends Error implements ValidationExceptionSchema {
 	readonly error: string;
-	readonly code: ExceptionCode | undefined;
+	readonly code: ExceptionCode;
 	readonly statusCode: Http.Status;
 
-	constructor(message: string, statusCode: Http.Status, code: ExceptionCode | undefined) {
+	constructor(message: string, statusCode: Http.Status, code: ExceptionCode) {
 		super(message);
 
 		this.code = code;

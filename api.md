@@ -21,9 +21,9 @@ export type BaseException<T = unknown> = {
 export class BaseValidationException extends Error implements ValidationExceptionSchema {
     // (undocumented)
     [TO_RESPONSE](): NextResponse<ValidationExceptionSchema>;
-    constructor(message: string, statusCode: Http.Status, code: _ExceptionCode | undefined);
+    constructor(message: string, statusCode: Http.Status, code: _ExceptionCode);
     // (undocumented)
-    readonly code: _ExceptionCode | undefined;
+    readonly code: _ExceptionCode;
     // (undocumented)
     readonly error: string;
     // (undocumented)
