@@ -60,7 +60,7 @@
 		"@microsoft/api-extractor": "7.38.0",
 		"@tsconfig/bun": "1.0.1",
 		"@tsconfig/strictest": "2.0.2",
-		"@types/node": "20.8.4",
+		"@types/node": "20.8.5",
 		"bun-types": "1.0.6",
 		"next": "13.5.4",
 		"semantic-release": "22.0.5",
