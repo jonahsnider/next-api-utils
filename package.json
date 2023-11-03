@@ -63,7 +63,7 @@
 		"@types/node": "20.8.10",
 		"bun-types": "1.0.8",
 		"next": "13.5.6",
-		"semantic-release": "22.0.6",
+		"semantic-release": "22.0.7",
 		"typedoc": "0.25.3",
 		"typescript": "5.2.2"
 	},
