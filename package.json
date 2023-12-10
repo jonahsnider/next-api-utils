@@ -65,7 +65,7 @@
 		"next": "13.5.6",
 		"semantic-release": "22.0.10",
 		"typedoc": "0.25.4",
-		"typescript": "5.3.2"
+		"typescript": "5.3.3"
 	},
 	"peerDependencies": {
 		"next": "^14 || ^13"
