@@ -39,5 +39,5 @@ test('throws an exception if the request body is invalid', async () => {
 		b: z.number(),
 	});
 
-	expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException as unknown as ErrorConstructor);
+	expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
 });

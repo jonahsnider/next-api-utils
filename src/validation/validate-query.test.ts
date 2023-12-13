@@ -32,7 +32,7 @@ test('throws an exception if the query parameters are invalid', () => {
 		b: z.string(),
 	});
 
-	expect(() => validateQuery(request, schema)).toThrow(InvalidQueryParametersException as unknown as ErrorConstructor);
+	expect(() => validateQuery(request, schema)).toThrow(InvalidQueryParametersException);
 });
 
 test('extracts query parameters', () => {

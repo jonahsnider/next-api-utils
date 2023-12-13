@@ -37,5 +37,5 @@ test('throws an exception if the path parameters are invalid', () => {
 		b: z.number(),
 	});
 
-	expect(() => validateParams(context, schema)).toThrow(InvalidPathParametersException as unknown as ErrorConstructor);
+	expect(() => validateParams(context, schema)).toThrow(InvalidPathParametersException);
 });
