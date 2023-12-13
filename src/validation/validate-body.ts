@@ -30,7 +30,13 @@ export async function validateBody<T extends Schema>(
 	request: Pick<NextRequest, 'json'>,
 	schema: T,
 ): Promise<z.infer<T>> {
-	const body: unknown = await request.json();
+	let body: unknown;
+
+	try {
+		body = await request.json();
+	} catch {
+		throw new InvalidBodyException('Request body is not JSON');
+	}
 
 	const result = schema.safeParse(body);
 

@@ -10,7 +10,11 @@ import { BaseValidationException } from './base-validation.exception.js';
  * @public
  */
 export class InvalidBodyException extends BaseValidationException {
-	constructor(zodError: z.ZodError<unknown>) {
-		super(fromZodError(zodError).message, Http.Status.UnprocessableEntity, ExceptionCode.InvalidBody);
+	constructor(error: z.ZodError<unknown> | string) {
+		super(
+			typeof error === 'string' ? error : fromZodError(error).message,
+			Http.Status.UnprocessableEntity,
+			ExceptionCode.InvalidBody,
+		);
 	}
 }

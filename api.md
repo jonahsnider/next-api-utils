@@ -48,7 +48,7 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 
 // @public
 export class InvalidBodyException extends BaseValidationException {
-    constructor(zodError: z.ZodError<unknown>);
+    constructor(error: z.ZodError<unknown> | string);
 }
 
 // @public

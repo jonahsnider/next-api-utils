@@ -41,3 +41,17 @@ test('throws an exception if the request body is invalid', async () => {
 
 	expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
 });
+
+test('throws an exception if the request body is not JSON', async () => {
+	const request = new Request('http://localhost/', {
+		body: 'not json',
+		method: 'POST',
+	});
+
+	const schema = z.object({
+		a: z.string(),
+		b: z.number(),
+	});
+
+	expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
+});
