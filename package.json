@@ -61,7 +61,7 @@
 		"@tsconfig/bun": "1.0.1",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/node": "20.10.8",
-		"bun-types": "1.0.21",
+		"bun-types": "1.0.22",
 		"next": "14.0.4",
 		"semantic-release": "22.0.12",
 		"typedoc": "0.25.7",
