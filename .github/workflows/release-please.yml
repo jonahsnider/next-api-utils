@@ -43,6 +43,8 @@ jobs:
       - name: Build
         run: bun run build
         if: ${{ steps.release.outputs.release_created }}
+      - name: Generate TypeScript declaration rollup
+        run: bun run validate-api
       - name: Publish
         run: npm publish
         if: ${{ steps.release.outputs.release_created }}
