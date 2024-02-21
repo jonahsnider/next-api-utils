@@ -39,6 +39,7 @@ jobs:
         with:
           node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org'
+        if: ${{ steps.release.outputs.release_created }}
       - name: Install dependencies with Bun
         run: bun install --frozen-lockfile
         if: ${{ steps.release.outputs.release_created }}
