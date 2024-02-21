@@ -41,7 +41,6 @@
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
-		"release": "semantic-release",
 		"test": "bun test src",
 		"test:coverage": "bun run test --coverage",
 		"validate-api": "api-extractor run",
@@ -63,7 +62,6 @@
 		"@types/bun": "1.0.6",
 		"@types/node": "20.11.19",
 		"next": "14.1.0",
-		"semantic-release": "23.0.2",
 		"typedoc": "0.25.8",
 		"typescript": "5.3.3"
 	},

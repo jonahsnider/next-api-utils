@@ -1,0 +1,50 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  release-please:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release-please
+        uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          # this assumes that you have created a personal access token
+          # (PAT) and configured it as a GitHub action secret named
+          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # this is a built-in strategy in release-please, see "Action Inputs"
+          # for more options
+          release-type: node
+      # The logic below handles the npm publication:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+        # these if statements ensure that a publication only occurs when
+        # a new release is created:
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Install dependencies with Bun
+        run: bun install --frozen-lockfile
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Test
+        run: bun run test
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Build
+        run: bun run build
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish
+        run: npm publish
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
