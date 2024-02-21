@@ -1,9 +1,9 @@
-import assert from 'assert';
+import { expect, test } from 'bun:test';
+import assert from 'node:assert';
 import { z } from 'zod';
 import { TO_RESPONSE } from '../../constants.js';
 import { ExceptionCode } from '../enums/exceptions.enum.js';
 import { InvalidPathParametersException } from './invalid-path-parameters.exception.js';
-import { expect, test } from 'bun:test';
 
 test('serializes to a NextResponse', () => {
 	const schema = z.object({ a: z.string() });

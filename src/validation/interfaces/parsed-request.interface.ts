@@ -1,5 +1,5 @@
-import { z } from 'zod';
-import { RequestSchema } from './request-schema.interface.js';
+import type { z } from 'zod';
+import type { RequestSchema } from './request-schema.interface.js';
 
 /**
  * Representing a parsed request from validateRequest.

@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import type { z } from 'zod';
 
 /**
  * An object with Zod schemas for validating a request body, query parameters, and/or path parameters with validateRequest.

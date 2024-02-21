@@ -1,7 +1,7 @@
+import { expect, test } from 'bun:test';
 import { z } from 'zod';
 import { InvalidPathParametersException } from './server.js';
 import { validateParams } from './validate-params.js';
-import { expect, test } from 'bun:test';
 
 test('validates path parameters', () => {
 	const context = {

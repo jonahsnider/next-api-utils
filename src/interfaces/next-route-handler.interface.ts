@@ -1,5 +1,5 @@
 import type { NextRequest, NextResponse } from 'next/server.js';
-import { NextRouteHandlerContext } from './next-route-handler-context.interface.js';
+import type { NextRouteHandlerContext } from './next-route-handler-context.interface.js';
 
 /**
  * A type for representing a Next.js API route handler function.

@@ -7,7 +7,7 @@
 /// <reference types="node" />
 
 import { Http } from '@jonahsnider/util';
-import { NextRequest } from 'next/server.js';
+import type { NextRequest } from 'next/server.js';
 import { NextResponse } from 'next/server.js';
 import type { Schema } from 'zod';
 import { z } from 'zod';
