@@ -1,5 +1,5 @@
-import { QueryBooleanSchema } from './query-boolean.dto.js';
 import { expect, test } from 'bun:test';
+import { QueryBooleanSchema } from './query-boolean.dto.js';
 
 test('parses booleans', () => {
 	expect(QueryBooleanSchema.parse(true)).toBe(true);

@@ -1,7 +1,7 @@
 import type { NextResponse } from 'next/server.js';
 import { TO_RESPONSE } from '../constants.js';
 import type { NextRouteHandler } from '../interfaces/next-route-handler.interface.js';
-import { NextRouteHandlerContext } from '../server.js';
+import type { NextRouteHandlerContext } from '../server.js';
 import { BaseValidationException } from '../validation/exceptions/base-validation.exception.js';
 
 /**

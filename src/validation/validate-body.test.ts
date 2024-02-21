@@ -1,7 +1,7 @@
+import { expect, test } from 'bun:test';
 import { z } from 'zod';
 import { InvalidBodyException } from './server.js';
 import { validateBody } from './validate-body.js';
-import { expect, test } from 'bun:test';
 
 test('validates request body', async () => {
 	const request = new Request('http://localhost/', {
@@ -39,7 +39,7 @@ test('throws an exception if the request body is invalid', async () => {
 		b: z.number(),
 	});
 
-	expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
+	await expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
 });
 
 test('throws an exception if the request body is not JSON', async () => {
@@ -53,5 +53,5 @@ test('throws an exception if the request body is not JSON', async () => {
 		b: z.number(),
 	});
 
-	expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
+	await expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
 });

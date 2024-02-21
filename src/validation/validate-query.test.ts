@@ -1,8 +1,8 @@
+import { expect, test } from 'bun:test';
 import querystring from 'node:querystring';
 import { z } from 'zod';
 import { InvalidQueryParametersException } from './server.js';
 import { extractQuery, validateQuery } from './validate-query.js';
-import { expect, test } from 'bun:test';
 
 test('validates query parameters', () => {
 	const request = {

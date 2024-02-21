@@ -1,7 +1,7 @@
+import { expect, test } from 'bun:test';
 import { TO_RESPONSE } from '../../constants.js';
 import { ExceptionCode } from '../enums/exceptions.enum.js';
 import { BaseValidationException } from './base-validation.exception.js';
-import { expect, test } from 'bun:test';
 
 test('serializes to a NextResponse', () => {
 	const exception = new BaseValidationException('message', 400, ExceptionCode.InvalidBody);

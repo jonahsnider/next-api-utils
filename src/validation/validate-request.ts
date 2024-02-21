@@ -1,8 +1,8 @@
-import { NextRequest } from 'next/server.js';
+import type { NextRequest } from 'next/server.js';
 import { z } from 'zod';
-import { NextRouteHandlerContext } from '../server.js';
-import { ParsedRequest, RequestSchemaToParsedRequest } from './interfaces/parsed-request.interface.js';
-import { RequestSchema } from './interfaces/request-schema.interface.js';
+import type { NextRouteHandlerContext } from '../server.js';
+import type { ParsedRequest, RequestSchemaToParsedRequest } from './interfaces/parsed-request.interface.js';
+import type { RequestSchema } from './interfaces/request-schema.interface.js';
 import { validateBody } from './validate-body.js';
 import { validateParams } from './validate-params.js';
 import { validateQuery } from './validate-query.js';
