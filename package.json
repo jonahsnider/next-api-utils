@@ -63,7 +63,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
 		"@jonahsnider/prettier-config": "1.1.2",
-		"@microsoft/api-extractor": "7.40.4",
+		"@microsoft/api-extractor": "7.40.5",
 		"@tsconfig/bun": "1.0.4",
 		"@tsconfig/strictest": "2.0.3",
 		"@types/bun": "1.0.6",
