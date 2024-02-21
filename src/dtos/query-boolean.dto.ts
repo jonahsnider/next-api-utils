@@ -18,7 +18,9 @@ import { z } from 'zod';
 export const QueryBooleanSchema = z
 	.string()
 	.or(z.boolean())
-	.transform((raw) => yn(raw))
+	// If the query parameter is an empty string, we treat that as being true
+	// ex. /path?flag will be treated as /path?flag=true
+	.transform((raw) => (raw === '' ? true : yn(raw)))
 	.pipe(z.boolean());
 
 /**
