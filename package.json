@@ -70,7 +70,7 @@
 		"@types/node": "20.12.4",
 		"next": "14.1.4",
 		"typedoc": "0.25.12",
-		"typescript": "5.4.3"
+		"typescript": "5.4.4"
 	},
 	"peerDependencies": {
 		"next": "^14 || ^13"
