@@ -2,11 +2,7 @@
 	"name": "next-api-utils",
 	"version": "1.1.0",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
-	"keywords": [
-		"api",
-		"next",
-		"nextjs"
-	],
+	"keywords": ["api", "next", "nextjs"],
 	"bugs": {
 		"url": "https://github.com/jonahsnider/next-api-utils/issues"
 	},
@@ -38,10 +34,7 @@
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist",
-		"!dist/**/*.test.{js,d.ts}"
-	],
+	"files": ["dist", "!dist/**/*.test.{js,d.ts}"],
 	"scripts": {
 		"prebuild": "rm -rf dist",
 		"build": "tsc",

@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import assert from 'node:assert';
+import assert from 'node:assert/strict';
 import { NextRequest, NextResponse } from 'next/server.js';
 import { z } from 'zod';
 import { TO_RESPONSE } from '../constants.js';
