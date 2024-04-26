@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import assert from 'node:assert';
+import assert from 'node:assert/strict';
 import { z } from 'zod';
 import { TO_RESPONSE } from '../../constants.js';
 import { ExceptionCode } from '../enums/exceptions.enum.js';
