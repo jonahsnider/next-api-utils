@@ -32,7 +32,7 @@ jobs:
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         if: ${{ steps.release.outputs.release_created }}
       - name: Setup Node.js
         uses: actions/setup-node@v4
