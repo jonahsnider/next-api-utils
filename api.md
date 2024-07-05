@@ -4,8 +4,6 @@
 
 ```ts
 
-/// <reference types="node" />
-
 import { Http } from '@jonahsnider/util';
 import type { NextRequest } from 'next/server.js';
 import { NextResponse } from 'next/server.js';
