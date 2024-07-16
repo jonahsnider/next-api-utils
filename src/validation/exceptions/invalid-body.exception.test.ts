@@ -1,11 +1,11 @@
-import { expect, test } from 'bun:test';
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import { z } from 'zod';
 import { TO_RESPONSE } from '../../constants.js';
 import { ExceptionCode } from '../enums/exceptions.enum.js';
 import { InvalidBodyException } from './invalid-body.exception.js';
 
-test('serializes to a NextResponse', () => {
+test('serializes to a NextResponse', async () => {
 	const schema = z.object({ a: z.string() });
 	const parsed = schema.safeParse({ a: 1 });
 
@@ -15,7 +15,7 @@ test('serializes to a NextResponse', () => {
 
 	const response = exception[TO_RESPONSE]();
 
-	expect(response.json()).resolves.toStrictEqual({
+	assert.deepEqual(await response.json(), {
 		statusCode: 422,
 		code: ExceptionCode.InvalidBody,
 		error: 'Unprocessable Content',

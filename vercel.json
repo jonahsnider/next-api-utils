@@ -1,6 +1,6 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"buildCommand": "bun run docs",
+	"buildCommand": "yarn run docs",
 	"cleanUrls": true,
 	"outputDirectory": "docs"
 }

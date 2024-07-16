@@ -1,5 +1,6 @@
-import { expect, test } from 'bun:test';
+import assert from 'node:assert/strict';
 import querystring from 'node:querystring';
+import { test } from 'node:test';
 import { z } from 'zod';
 import { InvalidQueryParametersException } from './server.js';
 import { extractQuery, validateQuery } from './validate-query.js';
@@ -16,7 +17,7 @@ test('validates query parameters', () => {
 
 	const result = validateQuery(request, schema);
 
-	expect(result).toStrictEqual({
+	assert.deepStrictEqual(result, {
 		a: ['1', '2'],
 		b: '3',
 	});
@@ -32,7 +33,7 @@ test('throws an exception if the query parameters are invalid', () => {
 		b: z.string(),
 	});
 
-	expect(() => validateQuery(request, schema)).toThrow(InvalidQueryParametersException);
+	assert.throws(() => validateQuery(request, schema), InvalidQueryParametersException);
 });
 
 test('extracts query parameters', () => {
@@ -40,5 +41,5 @@ test('extracts query parameters', () => {
 
 	const result = extractQuery(url);
 
-	expect(result).toEqual(querystring.parse(url.search.slice('?'.length)));
+	assert.deepEqual(result, { ...querystring.parse(url.search.slice('?'.length)) });
 });
