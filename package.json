@@ -48,8 +48,8 @@
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
-		"test": "tsx --test 'src/**/*.test.ts'",
-		"test:coverage": "mkdir -p coverage && tsx --test-reporter=lcov --experimental-test-coverage --test-reporter-destination=coverage/lcov.info --test 'src/**/*.test.ts'",
+		"test": "tsx --test './src/**/*.test.ts'",
+		"test:coverage": "mkdir -p coverage && tsx --test-reporter=lcov --experimental-test-coverage --test-reporter-destination=coverage/lcov.info --test './src/**/*.test.ts'",
 		"validate-api": "api-extractor run",
 		"validate-api:local": "api-extractor run --local --verbose"
 	},
