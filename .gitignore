@@ -228,5 +228,5 @@ temp
 # TypeDoc
 docs
 
-# Vercel
-.vercel
+# Local Netlify folder
+.netlify
