@@ -1,5 +1,5 @@
-import { expect, test } from 'bun:test';
 import assert from 'node:assert/strict';
+import { test } from 'node:test';
 import { NextRequest, NextResponse } from 'next/server.js';
 import { z } from 'zod';
 import { TO_RESPONSE } from '../constants.js';
@@ -25,7 +25,7 @@ test('responds with known exceptions', async () => {
 	const wrapped = exceptionWrapper.wrapRoute(route);
 
 	const result = await wrapped(new NextRequest('http://localhost'));
-	expect(result.text()).resolves.toBe('custom');
+	assert.equal(await result.text(), 'custom');
 });
 
 test('reraises unknown exceptions', async () => {
@@ -39,9 +39,9 @@ test('reraises unknown exceptions', async () => {
 
 	const [result] = await Promise.allSettled([wrapped(new NextRequest('http://localhost'))]);
 
-	assert.strictEqual(result.status, 'rejected');
-	expect(result.reason).toBeInstanceOf(Error);
-	expect(result.reason).toEqual(new Error('unknown'));
+	assert.equal(result.status, 'rejected');
+	assert(result.reason instanceof Error);
+	assert.equal(result.reason.message, 'unknown');
 });
 
 test('automatically catches validation exceptions', async () => {
@@ -56,7 +56,7 @@ test('automatically catches validation exceptions', async () => {
 	const wrapped = exceptionWrapper.wrapRoute(route);
 
 	const result = await wrapped(new NextRequest('http://localhost'));
-	expect(result.json()).resolves.toStrictEqual({
+	assert.deepEqual(await result.json(), {
 		code: 'E_INVALID_QUERY_PARAMS',
 		error: 'Unprocessable Content',
 		message: 'Validation error: Required at "foo"',

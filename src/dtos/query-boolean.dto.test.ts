@@ -1,22 +1,23 @@
-import { expect, test } from 'bun:test';
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
 import { QueryBooleanSchema } from './query-boolean.dto.js';
 
 test('parses booleans', () => {
-	expect(QueryBooleanSchema.parse(true)).toBe(true);
-	expect(QueryBooleanSchema.parse(false)).toBe(false);
+	assert.equal(QueryBooleanSchema.parse(true), true);
+	assert.equal(QueryBooleanSchema.parse(false), false);
 });
 
 test('parses booleans formatted as strings', () => {
-	expect(QueryBooleanSchema.parse('true')).toBe(true);
-	expect(QueryBooleanSchema.parse('1')).toBe(true);
-	expect(QueryBooleanSchema.parse('y')).toBe(true);
+	assert.equal(QueryBooleanSchema.parse('true'), true);
+	assert.equal(QueryBooleanSchema.parse('1'), true);
+	assert.equal(QueryBooleanSchema.parse('y'), true);
 
-	expect(QueryBooleanSchema.parse('false')).toBe(false);
-	expect(QueryBooleanSchema.parse('0')).toBe(false);
-	expect(QueryBooleanSchema.parse('n')).toBe(false);
+	assert.equal(QueryBooleanSchema.parse('false'), false);
+	assert.equal(QueryBooleanSchema.parse('0'), false);
+	assert.equal(QueryBooleanSchema.parse('n'), false);
 });
 
 test('rejects invalid booleans', () => {
-	expect(QueryBooleanSchema.safeParse('invalid').success).toBe(false);
-	expect(QueryBooleanSchema.safeParse(undefined).success).toBe(false);
+	assert.equal(QueryBooleanSchema.safeParse('invalid').success, false);
+	assert.equal(QueryBooleanSchema.safeParse(undefined).success, false);
 });

@@ -1,9 +1,10 @@
-import { expect, test } from 'bun:test';
+import assert from 'node:assert/strict';
+import test from 'node:test';
 import { z } from 'zod';
 import { InvalidBodyException } from './server.js';
 import { validateBody } from './validate-body.js';
 
-test('validates request body', async () => {
+test('validates request body', async (_t) => {
 	const request = new Request('http://localhost/', {
 		body: JSON.stringify({
 			a: '1',
@@ -19,7 +20,7 @@ test('validates request body', async () => {
 
 	const result = await validateBody(request, schema);
 
-	expect(result).toStrictEqual({
+	assert.deepStrictEqual(result, {
 		a: '1',
 		b: '2',
 	});
@@ -39,7 +40,7 @@ test('throws an exception if the request body is invalid', async () => {
 		b: z.number(),
 	});
 
-	await expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
+	await assert.rejects(validateBody(request, schema), InvalidBodyException);
 });
 
 test('throws an exception if the request body is not JSON', async () => {
@@ -53,5 +54,5 @@ test('throws an exception if the request body is not JSON', async () => {
 		b: z.number(),
 	});
 
-	await expect(validateBody(request, schema)).rejects.toBeInstanceOf(InvalidBodyException);
+	await assert.rejects(validateBody(request, schema), InvalidBodyException);
 });

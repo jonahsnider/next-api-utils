@@ -12,19 +12,16 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: '1.0.0'
-      - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
-      - name: Build
-        run: bun run build
-      - name: Upload compiled TypeScript
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
   docs:
     name: Generate docs
 
@@ -34,17 +31,18 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
-      - name: Generate docs
-        run: bun run docs
-      - name: Upload compiled TypeScript
-        uses: actions/upload-artifact@v4
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          name: docs
-          path: docs
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Generate docs
+        run: yarn docs
   lint:
     name: Lint
 
@@ -54,12 +52,18 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
       - name: Lint
-        run: bun run lint
+        run: yarn lint
   test:
     name: Test
 
@@ -69,12 +73,18 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
       - name: Test
-        run: bun run test:coverage
+        run: yarn test:coverage
   validate-api:
     name: Validate API
 
@@ -84,11 +94,17 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
       - name: Build package
-        run: bun run build
+        run: yarn build
       - name: Validate API
-        run: bun run validate-api
+        run: yarn validate-api
