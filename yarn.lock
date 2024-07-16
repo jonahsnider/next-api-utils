@@ -281,10 +281,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:^10.1.0":
-  version: 10.3.0
-  resolution: "@jonahsnider/util@npm:10.3.0"
-  checksum: 10c0/f70eafd8c60d75e6d37b6deb1685a0669a5dd45c61c31a24037a6a1c0aa5c61c811abb667fad5af38aced8cee5892e80625ba0a7cab5e544168da67d39dae7fb
+"@jonahsnider/util@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "@jonahsnider/util@npm:11.0.0"
+  checksum: 10c0/f701a4425bde23a34899fae159411841ce19504c43e4cf14181225e231253c96ffb09a1ddb9d4f00266023b2694652c8467c8850c1a937b17aba37be74afca90
   languageName: node
   linkType: hard
 
@@ -1446,7 +1446,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:1.8.3"
     "@jonahsnider/prettier-config": "npm:1.1.2"
-    "@jonahsnider/util": "npm:^10.1.0"
+    "@jonahsnider/util": "npm:^11.0.0"
     "@microsoft/api-extractor": "npm:7.43.7"
     "@tsconfig/node22": "npm:22.0.0"
     "@tsconfig/strictest": "npm:2.0.5"
