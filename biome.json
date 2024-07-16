@@ -5,7 +5,8 @@
 	},
 	"formatter": {
 		"formatWithErrors": true,
-		"lineWidth": 120
+		"lineWidth": 120,
+		"ignore": ["package.json"]
 	},
 	"javascript": {
 		"formatter": {
