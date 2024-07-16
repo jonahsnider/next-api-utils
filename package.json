@@ -48,8 +48,8 @@
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
-		"test": "yarn build && node --test './dist/**/*.test.js'",
-		"test:coverage": "yarn build && mkdir -p coverage && node --test-reporter=lcov --experimental-test-coverage --test-reporter-destination=coverage/lcov.info --test './dist/**/*.test.js'",
+		"test": "tsx --test src/**/*.test.ts",
+		"test:coverage": "mkdir -p coverage && tsx --test-reporter=lcov --experimental-test-coverage --test-reporter-destination=coverage/lcov.info --test src/**/*.test.ts",
 		"validate-api": "api-extractor run",
 		"validate-api:local": "api-extractor run --local --verbose"
 	},
@@ -68,6 +68,7 @@
 		"@tsconfig/strictest": "2.0.5",
 		"@types/node": "20.14.10",
 		"next": "14.2.5",
+		"tsx": "4.16.2",
 		"typedoc": "0.26.4",
 		"typescript": "5.5.3"
 	},
