@@ -2157,11 +2157,11 @@ __metadata:
   linkType: hard
 
 "zod-validation-error@npm:^3.0.0":
-  version: 3.3.0
-  resolution: "zod-validation-error@npm:3.3.0"
+  version: 3.3.1
+  resolution: "zod-validation-error@npm:3.3.1"
   peerDependencies:
     zod: ^3.18.0
-  checksum: 10c0/a233dca6dc9a2237aa7b677cc8ce022c2b6f90894fd4d1e2c7b239d2aad38f36f3b84bf7f7cfaff5bf97fce31e1010d2736ca1ec539e0e8cb8bb9d05977911a2
+  checksum: 10c0/53869a8478f42cd38f51e159431fe7af9e0b456e8078c6d9d906adb212753788defa9c8bd7374e9ecd4a688b6736fcfa091aebac65054328b8cfdecce9395d8e
   languageName: node
   linkType: hard
 
