@@ -69,7 +69,7 @@
 		"@types/node": "20.16.11",
 		"next": "14.2.15",
 		"tsx": "4.19.1",
-		"typedoc": "0.26.8",
+		"typedoc": "0.26.9",
 		"typescript": "5.6.3"
 	},
 	"peerDependencies": {
