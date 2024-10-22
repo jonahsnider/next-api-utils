@@ -4,12 +4,12 @@ import { z } from 'zod';
 import { InvalidPathParametersException } from './server.js';
 import { validateParams } from './validate-params.js';
 
-test('validates path parameters', () => {
-	const context = {
-		params: {
+test('validates path parameters', async () => {
+	const segmentData = {
+		params: Promise.resolve({
 			a: '1',
 			b: '2',
-		},
+		}),
 	};
 
 	const schema = z.object({
@@ -17,7 +17,7 @@ test('validates path parameters', () => {
 		b: z.string(),
 	});
 
-	const result = validateParams(context, schema);
+	const result = await validateParams(segmentData, schema);
 
 	assert.deepStrictEqual(result, {
 		a: '1',
@@ -26,11 +26,11 @@ test('validates path parameters', () => {
 });
 
 test('throws an exception if the path parameters are invalid', () => {
-	const context = {
-		params: {
+	const segmentData = {
+		params: Promise.resolve({
 			a: '1',
 			b: '2',
-		},
+		}),
 	};
 
 	const schema = z.object({
@@ -38,5 +38,5 @@ test('throws an exception if the path parameters are invalid', () => {
 		b: z.number(),
 	});
 
-	assert.throws(() => validateParams(context, schema), InvalidPathParametersException);
+	assert.rejects(() => validateParams(segmentData, schema), InvalidPathParametersException);
 });

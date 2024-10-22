@@ -1,7 +1,7 @@
 import type { NextResponse } from 'next/server.js';
 import { TO_RESPONSE } from '../constants.js';
 import type { NextRouteHandler } from '../interfaces/next-route-handler.interface.js';
-import type { NextRouteHandlerContext } from '../server.js';
+import type { NextRouteHandlerSegmentData } from '../server.js';
 import { BaseValidationException } from '../validation/exceptions/base-validation.exception.js';
 
 /**
@@ -69,10 +69,10 @@ export class ExceptionWrapper<Exception extends BaseException<unknown>> {
 	 * @param route - The route handler function to wrap
 	 * @returns A wrapped version of the route handler
 	 */
-	wrapRoute<ResponseBody, Context extends NextRouteHandlerContext = NextRouteHandlerContext>(
-		route: NextRouteHandler<ResponseBody, Context>,
+	wrapRoute<ResponseBody, SegmentData extends NextRouteHandlerSegmentData = NextRouteHandlerSegmentData>(
+		route: NextRouteHandler<ResponseBody, SegmentData>,
 	) {
-		return async (...parameters: Parameters<NextRouteHandler<ResponseBody, Context>>) => {
+		return async (...parameters: Parameters<NextRouteHandler<ResponseBody, SegmentData>>) => {
 			try {
 				// @ts-expect-error The arguments to route will be correct at runtime
 				return await route.apply(route, parameters);

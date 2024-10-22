@@ -41,7 +41,7 @@ export enum _ExceptionCode {
 // @public
 export class ExceptionWrapper<Exception extends BaseException<unknown>> {
     constructor(isException?: IsException<Exception> | undefined);
-    wrapRoute<ResponseBody, Context extends NextRouteHandlerContext = NextRouteHandlerContext>(route: NextRouteHandler<ResponseBody, Context>): (...parameters: Parameters<NextRouteHandler<ResponseBody, Context>>) => Promise<NextResponse<unknown>>;
+    wrapRoute<ResponseBody, SegmentData extends NextRouteHandlerSegmentData = NextRouteHandlerSegmentData>(route: NextRouteHandler<ResponseBody, SegmentData>): (...parameters: Parameters<NextRouteHandler<ResponseBody, SegmentData>>) => Promise<NextResponse<unknown>>;
 }
 
 // @public
@@ -63,11 +63,11 @@ export class InvalidQueryParametersException extends BaseValidationException {
 export type IsException<Exception extends BaseException<unknown>> = (error: unknown) => error is Exception;
 
 // @public
-export type NextRouteHandler<ResponseBody = unknown, Context extends NextRouteHandlerContext = NextRouteHandlerContext> = NextRouteHandlerContext extends Context ? (request: NextRequest) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>> : (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
+export type NextRouteHandler<ResponseBody = unknown, SegmentData extends NextRouteHandlerSegmentData = NextRouteHandlerSegmentData> = NextRouteHandlerSegmentData extends SegmentData ? (request: NextRequest) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>> : (request: NextRequest, segmentData: SegmentData) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
 
 // @public
-export type NextRouteHandlerContext<PathParameters extends Record<string, string> = Record<never, never>> = {
-    params: PathParameters;
+export type NextRouteHandlerSegmentData<PathParameters extends Record<string, string> = Record<never, never>> = {
+    params: Promise<PathParameters>;
 };
 
 // @public
@@ -100,7 +100,7 @@ export const TO_RESPONSE: unique symbol;
 export function validateBody<T extends Schema>(request: Pick<NextRequest, 'json'>, schema: T): Promise<z.infer<T>>;
 
 // @public
-export function validateParams<T extends Schema>(context: NextRouteHandlerContext, schema: T): z.infer<T>;
+export function validateParams<T extends Schema>(segmentData: NextRouteHandlerSegmentData, schema: T): Promise<z.infer<T>>;
 
 // @public
 export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T>;
@@ -109,7 +109,7 @@ export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'
 export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, never>>(request: NextRequest, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
 
 // @public
-export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, z.Schema>>(request: NextRequest, context: NextRouteHandlerContext, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
+export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, z.Schema>>(request: NextRequest, segmentData: NextRouteHandlerSegmentData, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
 
 // @public
 export const ValidationExceptionSchema: z.ZodObject<{
