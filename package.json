@@ -1,6 +1,6 @@
 {
 	"name": "next-api-utils",
-	"version": "1.1.0",
+	"version": "2.0.0",
 	"description": "Utilities for building maintainable backend APIs for the Next.js app router.",
 	"keywords": [
 		"api",
