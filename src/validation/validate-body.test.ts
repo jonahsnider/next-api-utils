@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { InvalidBodyException } from './server.js';
 import { validateBody } from './validate-body.js';
 
-test('validates request body', async (_t) => {
+test('validates request body', async () => {
 	const request = new Request('http://localhost/', {
 		body: JSON.stringify({
 			a: '1',
