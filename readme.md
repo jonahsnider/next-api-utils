@@ -10,6 +10,14 @@ Utilities for building better APIs with Next.js app router.
 npm i next-api-utils
 ```
 
+### Next.js version compatibility
+
+| Next.js version | next-api-utils version    |
+| --------------- | ------------------------- |
+| v15             | v2                        |
+| v14             | v1 (no longer maintained) |
+| v13             | v1 (no longer maintained) |
+
 ## Documentation
 
 Generated documentation for the latest version is available at [next-api-utils.jonahsnider.dev](http://next-api-utils.jonahsnider.dev/).

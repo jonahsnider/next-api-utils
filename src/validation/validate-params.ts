@@ -1,5 +1,5 @@
 import type { Schema, z } from 'zod';
-import type { NextRouteHandlerContext } from '../interfaces/next-route-handler-context.interface.js';
+import type { NextRouteHandlerSegmentData } from '../interfaces/next-route-handler-segment-data.interface.js';
 import { InvalidPathParametersException } from './exceptions/invalid-path-parameters.exception.js';
 
 /**
@@ -12,12 +12,12 @@ import { InvalidPathParametersException } from './exceptions/invalid-path-parame
  * import { validateParams } from 'next-api-utils';
  * import { z } from 'zod';
  *
- * export const GET = (request, context) => {
- *   const params = validateParams(context, z.object({ foo: z.string() }));
+ * export const GET = (request, segmentData) => {
+ *   const params = validateParams(segmentData, z.object({ foo: z.string() }));
  * };
  * ```
  *
- * @param context - The {@link NextRouteHandlerContext} object to validate the path parameters for
+ * @param segmentData - The {@link NextRouteHandlerSegmentData} object to validate the path parameters for
  * @param schema - The Zod schema to validate the path parameters against
  * @returns The validated path parameters
  *
@@ -26,8 +26,11 @@ import { InvalidPathParametersException } from './exceptions/invalid-path-parame
  *
  * @public
  */
-export function validateParams<T extends Schema>(context: NextRouteHandlerContext, schema: T): z.infer<T> {
-	const result = schema.safeParse(context.params);
+export async function validateParams<T extends Schema>(
+	segmentData: NextRouteHandlerSegmentData,
+	schema: T,
+): Promise<z.infer<T>> {
+	const result = schema.safeParse(await segmentData.params);
 
 	if (result.success) {
 		return result.data;

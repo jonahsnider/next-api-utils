@@ -1,5 +1,5 @@
 import type { NextRequest, NextResponse } from 'next/server.js';
-import type { NextRouteHandlerContext } from './next-route-handler-context.interface.js';
+import type { NextRouteHandlerSegmentData } from './next-route-handler-segment-data.interface.js';
 
 /**
  * A type for representing a Next.js API route handler function.
@@ -11,7 +11,10 @@ import type { NextRouteHandlerContext } from './next-route-handler-context.inter
  */
 export type NextRouteHandler<
 	ResponseBody = unknown,
-	Context extends NextRouteHandlerContext = NextRouteHandlerContext,
-> = NextRouteHandlerContext extends Context
+	SegmentData extends NextRouteHandlerSegmentData = NextRouteHandlerSegmentData,
+> = NextRouteHandlerSegmentData extends SegmentData
 	? (request: NextRequest) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>
-	: (request: NextRequest, context: Context) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
+	: (
+			request: NextRequest,
+			segmentData: SegmentData,
+		) => NextResponse<ResponseBody> | PromiseLike<NextResponse<ResponseBody>>;
