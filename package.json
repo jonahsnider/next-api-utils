@@ -72,7 +72,7 @@
 		"react": "18.3.1",
 		"tsx": "4.19.3",
 		"typedoc": "0.27.9",
-		"typescript": "5.7.3"
+		"typescript": "5.8.2"
 	},
 	"peerDependencies": {
 		"next": "^15"
