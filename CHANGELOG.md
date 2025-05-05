@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/jonahsnider/next-api-utils/compare/v2.0.0...v2.0.1) (2025-05-05)
+
+
+### Bug Fixes
+
+* mark Zod as peer dependency ([81918b5](https://github.com/jonahsnider/next-api-utils/commit/81918b50e4539ded46801958467405c62f8f352f))
+
 ## [2.0.0](https://github.com/jonahsnider/next-api-utils/compare/v1.1.0...v2.0.0) (2024-10-22)
 
 
