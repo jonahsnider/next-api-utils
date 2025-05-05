@@ -1796,7 +1796,7 @@ __metadata:
     zod-validation-error: "npm:^3.4.0"
   peerDependencies:
     next: ^15
-    zod: "*"
+    zod: ^3
   peerDependenciesMeta:
     next:
       optional: false
