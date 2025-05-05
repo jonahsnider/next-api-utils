@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/jonahsnider/next-api-utils/compare/v2.0.1...v2.0.2) (2025-05-05)
+
+
+### Bug Fixes
+
+* fix Yarn lockfile ([419e104](https://github.com/jonahsnider/next-api-utils/commit/419e1048d53c05a8836f63c794edd6f2e46b9fc5))
+
 ## [2.0.1](https://github.com/jonahsnider/next-api-utils/compare/v2.0.0...v2.0.1) (2025-05-05)
 
 
