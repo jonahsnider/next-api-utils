@@ -59,7 +59,7 @@ test('automatically catches validation exceptions', async () => {
 	assert.deepEqual(await result.json(), {
 		code: 'E_INVALID_QUERY_PARAMS',
 		error: 'Unprocessable Content',
-		message: 'Validation error: Required at "foo"',
+		message: 'Validation error: Expected string at "foo"',
 		statusCode: 422,
 	});
 });

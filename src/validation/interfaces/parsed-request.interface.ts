@@ -22,10 +22,7 @@ export type ParsedRequest<
  * @public
  */
 export type RequestSchemaToParsedRequest<T extends RequestSchema> = ParsedRequest<
-	// @ts-expect-error
 	z.infer<T['body']>,
-	// @ts-expect-error
 	z.infer<T['query']>,
-	// @ts-expect-error
 	z.infer<T['params']>
 >;
