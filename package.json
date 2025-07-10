@@ -72,11 +72,11 @@
 		"tsx": "4.20.3",
 		"typedoc": "0.28.7",
 		"typescript": "5.8.3",
-		"zod": "3.25.76"
+		"zod": "4.0.2"
 	},
 	"peerDependencies": {
 		"next": "^15",
-		"zod": "^3"
+		"zod": "^3 || ^4.0.0"
 	},
 	"peerDependenciesMeta": {
 		"next": {
