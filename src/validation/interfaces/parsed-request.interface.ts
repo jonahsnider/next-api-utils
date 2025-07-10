@@ -8,8 +8,8 @@ import type { RequestSchema } from './request-schema.interface.js';
  */
 export type ParsedRequest<
 	RequestBody = never,
-	QueryParameters extends undefined | Record<string, unknown> = never,
-	PathParameters extends undefined | Record<string, string | string[]> = never,
+	QueryParameters = never,
+	PathParameters = never,
 > = {
 	body: never extends RequestBody ? undefined : RequestBody;
 	query: never extends QueryParameters ? undefined : QueryParameters;
@@ -22,7 +22,7 @@ export type ParsedRequest<
  * @public
  */
 export type RequestSchemaToParsedRequest<T extends RequestSchema> = ParsedRequest<
-	z.infer<T['body']>,
-	z.infer<T['query']>,
-	z.infer<T['params']>
+	T['body'] extends z.ZodType ? z.infer<T['body']> : never,
+	T['query'] extends z.ZodType ? z.infer<T['query']> : never,
+	T['params'] extends z.ZodType ? z.infer<T['params']> : never
 >;

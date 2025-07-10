@@ -6,9 +6,9 @@ import type { z } from 'zod';
  * @public
  */
 export type RequestSchema<
-	RequestBody extends z.Schema | undefined = never,
-	QueryParameters extends z.Schema | undefined = never,
-	PathParameters extends z.Schema | undefined = never,
+	RequestBody extends z.ZodType | undefined = never,
+	QueryParameters extends z.ZodType | undefined = never,
+	PathParameters extends z.ZodType | undefined = never,
 > = {
 	body: never extends RequestBody ? undefined : RequestBody;
 	query: never extends QueryParameters ? undefined : QueryParameters;

@@ -23,7 +23,7 @@ import { validateQuery } from './validate-query.js';
  *
  * @public
  */
-export async function validateRequest<T extends RequestSchema<z.Schema, z.Schema, never>>(
+export async function validateRequest<T extends RequestSchema<z.ZodType, z.ZodType, never>>(
 	request: NextRequest,
 	requestSchema: T,
 	// @ts-expect-error
@@ -48,13 +48,13 @@ export async function validateRequest<T extends RequestSchema<z.Schema, z.Schema
  *
  * @public
  */
-export async function validateRequest<T extends RequestSchema<z.Schema, z.Schema, z.Schema>>(
+export async function validateRequest<T extends RequestSchema<z.ZodType, z.ZodType, z.ZodType>>(
 	request: NextRequest,
 	segmentData: NextRouteHandlerSegmentData,
 	requestSchema: T,
 	// @ts-expect-error
 ): Promise<RequestSchemaToParsedRequest<T>>;
-export async function validateRequest<T extends RequestSchema<z.Schema, z.Schema, z.Schema>>(
+export async function validateRequest<T extends RequestSchema<z.ZodType, z.ZodType, z.ZodType>>(
 	request: NextRequest,
 	requestSchemaOrContext: T | NextRouteHandlerSegmentData,
 	maybeRequestSchema?: T,
