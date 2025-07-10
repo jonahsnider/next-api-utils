@@ -8,7 +8,7 @@ import { ExceptionCode } from '../enums/exceptions.enum.js';
  */
 export const ValidationExceptionSchema = z.object({
 	message: z.string(),
-	code: z.nativeEnum(ExceptionCode).optional(),
+	code: z.enum(ExceptionCode).optional(),
 	statusCode: z.number(),
 	error: z.string(),
 });
