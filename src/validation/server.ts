@@ -14,5 +14,3 @@ export * from './validate-body.js';
 // biome-ignore lint/performance/noReExportAll: This is the cleanest way to do this
 export * from './validate-params.js';
 export { validateQuery } from './validate-query.js';
-// biome-ignore lint/performance/noReExportAll: This is the cleanest way to do this
-export * from './validate-request.js';
