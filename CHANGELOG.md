@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.0.0](https://github.com/jonahsnider/next-api-utils/compare/v2.0.2...v3.0.0) (2025-07-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to Zod v4
+* remove validateRequest()
+
+### Features
+
+* remove validateRequest() ([6a82b1f](https://github.com/jonahsnider/next-api-utils/commit/6a82b1f3185c9fc3e6b25536d3b4a873456c8673))
+* upgrade to Zod v4 ([f96b80d](https://github.com/jonahsnider/next-api-utils/commit/f96b80dfa02494ceafd1926e5a7a4ca0c7af928c))
+
 ## [2.0.2](https://github.com/jonahsnider/next-api-utils/compare/v2.0.1...v2.0.2) (2025-05-05)
 
 
