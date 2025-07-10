@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/jonahsnider/next-api-utils/compare/v3.0.0...v3.0.1) (2025-07-10)
+
+
+### Bug Fixes
+
+* update version compatibility table in README ([3c5818e](https://github.com/jonahsnider/next-api-utils/commit/3c5818e47ee9a7c5a93e7a7bcd473a9ffda579ae))
+
 ## [3.0.0](https://github.com/jonahsnider/next-api-utils/compare/v2.0.2...v3.0.0) (2025-07-10)
 
 
