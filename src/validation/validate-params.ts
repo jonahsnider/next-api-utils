@@ -1,4 +1,4 @@
-import type { Schema, z } from 'zod';
+import type { z } from 'zod';
 import type { NextRouteHandlerSegmentData } from '../interfaces/next-route-handler-segment-data.interface.js';
 import { InvalidPathParametersException } from './exceptions/invalid-path-parameters.exception.js';
 
@@ -26,7 +26,7 @@ import { InvalidPathParametersException } from './exceptions/invalid-path-parame
  *
  * @public
  */
-export async function validateParams<T extends Schema>(
+export async function validateParams<T extends z.ZodType>(
 	segmentData: NextRouteHandlerSegmentData,
 	schema: T,
 ): Promise<z.infer<T>> {

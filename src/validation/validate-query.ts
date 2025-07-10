@@ -1,6 +1,6 @@
 import type { ParsedUrlQuery } from 'node:querystring';
 import type { NextRequest } from 'next/server.js';
-import type { Schema, z } from 'zod';
+import type { z } from 'zod';
 import { InvalidQueryParametersException } from './exceptions/invalid-query-parameters.exception.js';
 
 /** @internal */
@@ -46,7 +46,7 @@ export function extractQuery(url: URL): ParsedUrlQuery {
  *
  * @public
  */
-export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T> {
+export function validateQuery<T extends z.ZodType>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T> {
 	const query = extractQuery(new URL(request.url));
 
 	const result = schema.safeParse(query);

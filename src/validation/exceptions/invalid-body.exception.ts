@@ -1,6 +1,5 @@
 import { Http } from '@jonahsnider/util';
-import type { z } from 'zod';
-import { fromZodError } from 'zod-validation-error';
+import { z } from 'zod';
 import { ExceptionCode } from '../enums/exceptions.enum.js';
 import { BaseValidationException } from './base-validation.exception.js';
 
@@ -12,7 +11,7 @@ import { BaseValidationException } from './base-validation.exception.js';
 export class InvalidBodyException extends BaseValidationException {
 	constructor(error: z.ZodError<unknown> | string) {
 		super(
-			typeof error === 'string' ? error : fromZodError(error).message,
+			typeof error === 'string' ? error : z.prettifyError(error),
 			Http.Status.UnprocessableEntity,
 			ExceptionCode.InvalidBody,
 		);
