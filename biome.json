@@ -1,12 +1,12 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
 	"files": {
-		"ignore": ["dist", "node_modules", "temp", "docs", "coverage"]
+		"includes": ["**", "!**/dist", "!**/node_modules", "!**/temp", "!**/docs", "!**/coverage"]
 	},
 	"formatter": {
 		"formatWithErrors": true,
 		"lineWidth": 120,
-		"ignore": ["package.json"]
+		"includes": ["**", "!**/package.json"]
 	},
 	"javascript": {
 		"formatter": {
@@ -22,7 +22,6 @@
 	},
 	"linter": {
 		"rules": {
-			"all": true,
 			"style": {
 				"noParameterProperties": "off"
 			},
