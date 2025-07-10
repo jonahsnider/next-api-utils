@@ -1,5 +1,5 @@
 import type { NextRequest } from 'next/server.js';
-import type { Schema, z } from 'zod';
+import type { z } from 'zod';
 import { InvalidBodyException } from './exceptions/invalid-body.exception.js';
 
 /**
@@ -26,7 +26,7 @@ import { InvalidBodyException } from './exceptions/invalid-body.exception.js';
  *
  * @public
  */
-export async function validateBody<T extends Schema>(
+export async function validateBody<T extends z.ZodType>(
 	request: Pick<NextRequest, 'json'>,
 	schema: T,
 ): Promise<z.infer<T>> {

@@ -7,7 +7,6 @@
 import { Http } from '@jonahsnider/util';
 import type { NextRequest } from 'next/server.js';
 import { NextResponse } from 'next/server.js';
-import type { Schema } from 'zod';
 import { z } from 'zod';
 
 // @public
@@ -71,63 +70,30 @@ export type NextRouteHandlerSegmentData<PathParameters extends Record<string, st
 };
 
 // @public
-export type ParsedRequest<RequestBody = never, QueryParameters extends undefined | Record<string, unknown> = never, PathParameters extends undefined | Record<string, string | string[]> = never> = {
-    body: never extends RequestBody ? undefined : RequestBody;
-    query: never extends QueryParameters ? undefined : QueryParameters;
-    params: never extends PathParameters ? undefined : PathParameters;
-};
-
-// @public
-export const QueryBooleanSchema: z.ZodPipeline<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodBoolean]>, boolean | undefined, string | boolean>, z.ZodBoolean>;
+export const QueryBooleanSchema: z.ZodPipe<z.ZodPipe<z.ZodUnion<[z.ZodString, z.ZodBoolean]>, z.ZodTransform<boolean | undefined, string | boolean>>, z.ZodBoolean>;
 
 // @public
 export type QueryBooleanSchema = z.infer<typeof QueryBooleanSchema>;
 
 // @public
-export type RequestSchema<RequestBody extends z.Schema | undefined = never, QueryParameters extends z.Schema | undefined = never, PathParameters extends z.Schema | undefined = never> = {
-    body: never extends RequestBody ? undefined : RequestBody;
-    query: never extends QueryParameters ? undefined : QueryParameters;
-    params: never extends PathParameters ? undefined : PathParameters;
-};
-
-// @public
-export type RequestSchemaToParsedRequest<T extends RequestSchema> = ParsedRequest<z.infer<T['body']>, z.infer<T['query']>, z.infer<T['params']>>;
-
-// @public
 export const TO_RESPONSE: unique symbol;
 
 // @public
-export function validateBody<T extends Schema>(request: Pick<NextRequest, 'json'>, schema: T): Promise<z.infer<T>>;
+export function validateBody<T extends z.ZodType>(request: Pick<NextRequest, 'json'>, schema: T): Promise<z.infer<T>>;
 
 // @public
-export function validateParams<T extends Schema>(segmentData: NextRouteHandlerSegmentData, schema: T): Promise<z.infer<T>>;
+export function validateParams<T extends z.ZodType>(segmentData: NextRouteHandlerSegmentData, schema: T): Promise<z.infer<T>>;
 
 // @public
-export function validateQuery<T extends Schema>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T>;
-
-// @public
-export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, never>>(request: NextRequest, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
-
-// @public
-export function validateRequest<T extends RequestSchema<z.Schema, z.Schema, z.Schema>>(request: NextRequest, segmentData: NextRouteHandlerSegmentData, requestSchema: T): Promise<RequestSchemaToParsedRequest<T>>;
+export function validateQuery<T extends z.ZodType>(request: Pick<NextRequest, 'url'>, schema: T): z.infer<T>;
 
 // @public
 export const ValidationExceptionSchema: z.ZodObject<{
     message: z.ZodString;
-    code: z.ZodOptional<z.ZodNativeEnum<typeof _ExceptionCode>>;
+    code: z.ZodOptional<z.ZodEnum<typeof _ExceptionCode>>;
     statusCode: z.ZodNumber;
     error: z.ZodString;
-}, "strip", z.ZodTypeAny, {
-    message: string;
-    statusCode: number;
-    error: string;
-    code?: _ExceptionCode | undefined;
-}, {
-    message: string;
-    statusCode: number;
-    error: string;
-    code?: _ExceptionCode | undefined;
-}>;
+}, z.core.$strip>;
 
 // @public
 export type ValidationExceptionSchema = z.infer<typeof ValidationExceptionSchema>;
