@@ -12,11 +12,12 @@ npm i next-api-utils
 
 ### Next.js version compatibility
 
-| Next.js version | next-api-utils version    |
-| --------------- | ------------------------- |
-| v15             | v2                        |
-| v14             | v1 (no longer maintained) |
-| v13             | v1 (no longer maintained) |
+| Next.js version | Zod version | next-api-utils version    |
+| --------------- | ----------- | ------------------------- |
+| v15             | v4          | v3                        |
+| v15             | v3          | v2                        |
+| v14             | v3          | v1 (no longer maintained) |
+| v13             | v3          | v1 (no longer maintained) |
 
 ## Documentation
 
