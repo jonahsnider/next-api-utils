@@ -19,6 +19,6 @@ test('serializes to a NextResponse', async () => {
 		statusCode: 422,
 		code: ExceptionCode.InvalidPathParameters,
 		error: 'Unprocessable Content',
-		message: 'Validation error: Expected string, received number at "a"',
+		message: '✖ Invalid input: expected string, received number\n  → at a',
 	});
 });
