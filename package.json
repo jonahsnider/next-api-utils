@@ -59,7 +59,7 @@
 		"yn": "^5.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.0",
+		"@biomejs/biome": "2.2.2",
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@microsoft/api-extractor": "7.52.11",
 		"@tsconfig/node22": "22.0.2",
