@@ -64,7 +64,7 @@
 		"@microsoft/api-extractor": "7.52.11",
 		"@tsconfig/node22": "22.0.2",
 		"@tsconfig/strictest": "2.0.5",
-		"@types/node": "22.17.2",
+		"@types/node": "22.18.0",
 		"@types/react": "^19.0.0",
 		"next": "15.5.0",
 		"react": "19.1.1",
