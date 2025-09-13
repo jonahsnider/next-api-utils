@@ -552,9 +552,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.52.12":
-  version: 7.52.12
-  resolution: "@microsoft/api-extractor@npm:7.52.12"
+"@microsoft/api-extractor@npm:7.52.13":
+  version: 7.52.13
+  resolution: "@microsoft/api-extractor@npm:7.52.13"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.30.7"
     "@microsoft/tsdoc": "npm:~0.15.1"
@@ -571,7 +571,7 @@ __metadata:
     typescript: "npm:5.8.2"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10c0/b3476ea78855556e6f972bf2acb917cbf13bdc89f0fbd62d36e2172094e7d8d99fe6217111cd5006972645be62d16886ebf85f07371be276b7d5c56583a60638
+  checksum: 10c0/786336e4b785d5ffea3a07568ee716989dda09d1476c4e97f1a09d9367e8ea688468ac04d4ca07e98d403accb77110f59b58de783889582daba87049768977d2
   languageName: node
   linkType: hard
 
@@ -1783,7 +1783,7 @@ __metadata:
     "@biomejs/biome": "npm:2.2.4"
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/util": "npm:^12.0.0"
-    "@microsoft/api-extractor": "npm:7.52.12"
+    "@microsoft/api-extractor": "npm:7.52.13"
     "@tsconfig/node22": "npm:22.0.2"
     "@tsconfig/strictest": "npm:2.0.5"
     "@types/node": "npm:22.18.1"
