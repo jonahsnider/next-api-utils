@@ -71,7 +71,7 @@
 		"tsx": "4.20.5",
 		"typedoc": "0.28.13",
 		"typescript": "5.9.2",
-		"zod": "4.1.8"
+		"zod": "4.1.9"
 	},
 	"peerDependencies": {
 		"next": "^15",
