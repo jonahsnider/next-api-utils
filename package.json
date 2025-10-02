@@ -67,7 +67,7 @@
 		"@types/node": "22.18.8",
 		"@types/react": "^19.0.0",
 		"next": "15.5.4",
-		"react": "19.1.1",
+		"react": "19.2.0",
 		"tsx": "4.20.6",
 		"typedoc": "0.28.13",
 		"typescript": "5.9.3",
