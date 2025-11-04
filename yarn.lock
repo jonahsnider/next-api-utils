@@ -552,9 +552,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.53.3":
-  version: 7.53.3
-  resolution: "@microsoft/api-extractor@npm:7.53.3"
+"@microsoft/api-extractor@npm:7.54.0":
+  version: 7.54.0
+  resolution: "@microsoft/api-extractor@npm:7.54.0"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.31.3"
     "@microsoft/tsdoc": "npm:~0.15.1"
@@ -563,6 +563,7 @@ __metadata:
     "@rushstack/rig-package": "npm:0.6.0"
     "@rushstack/terminal": "npm:0.19.3"
     "@rushstack/ts-command-line": "npm:5.1.3"
+    diff: "npm:~8.0.2"
     lodash: "npm:~4.17.15"
     minimatch: "npm:10.0.3"
     resolve: "npm:~1.22.1"
@@ -571,7 +572,7 @@ __metadata:
     typescript: "npm:5.8.2"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10c0/b9bc0283bab707e054745a2d1508f758019abe85eac41035a10c20223e7adc808a18d3ee93f372c5d99da31fb65f25d1efd28c3b514b5a52e5f92494e74b18f6
+  checksum: 10c0/e4708ac5edc3bb32988b632cc75e6f5e5b3afe7772c7229974db91f731d6b8d3c786c406d5437bfce893b78c6f23c64b084db52952a7d35294e2525171a465ee
   languageName: node
   linkType: hard
 
@@ -1141,6 +1142,13 @@ __metadata:
   version: 2.0.4
   resolution: "detect-libc@npm:2.0.4"
   checksum: 10c0/c15541f836eba4b1f521e4eecc28eefefdbc10a94d3b8cb4c507689f332cc111babb95deda66f2de050b22122113189986d5190be97d51b5a2b23b938415e67c
+  languageName: node
+  linkType: hard
+
+"diff@npm:~8.0.2":
+  version: 8.0.2
+  resolution: "diff@npm:8.0.2"
+  checksum: 10c0/abfb387f033e089df3ec3be960205d17b54df8abf0924d982a7ced3a94c557a4e6cbff2e78b121f216b85f466b3d8d041673a386177c311aaea41459286cc9bc
   languageName: node
   linkType: hard
 
@@ -1796,7 +1804,7 @@ __metadata:
     "@biomejs/biome": "npm:2.3.3"
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/util": "npm:^12.0.0"
-    "@microsoft/api-extractor": "npm:7.53.3"
+    "@microsoft/api-extractor": "npm:7.54.0"
     "@tsconfig/node22": "npm:22.0.2"
     "@tsconfig/strictest": "npm:2.0.7"
     "@types/node": "npm:22.19.0"
