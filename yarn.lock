@@ -812,17 +812,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node22@npm:22.0.2":
-  version: 22.0.2
-  resolution: "@tsconfig/node22@npm:22.0.2"
-  checksum: 10c0/c75e6b9ea86ec2a384adefac0e2f16a6c08202ae5cf6c8c745944396a6931ffb38e742809491c1882d1868c2af1c33744193701779674bfb1e05f6a130045a18
+"@tsconfig/node22@npm:22.0.3":
+  version: 22.0.3
+  resolution: "@tsconfig/node22@npm:22.0.3"
+  checksum: 10c0/77ef3207e3da5184fdedc2db86f37bd0e049286e37b5c3ac6607a5b78292d9aa95793921df5f0a0860122247b1b5a602bf7ea179e42f9039c94949f96146e61a
   languageName: node
   linkType: hard
 
-"@tsconfig/strictest@npm:2.0.7":
-  version: 2.0.7
-  resolution: "@tsconfig/strictest@npm:2.0.7"
-  checksum: 10c0/5122ced742f7271fbc423182d40ade0264c7ef5acd517eb892a4aa2ea74bc0e4fa874931c4a8f271275913b2d289ae20bcc8cd9e355b38dfacd03d475a2c19f3
+"@tsconfig/strictest@npm:2.0.8":
+  version: 2.0.8
+  resolution: "@tsconfig/strictest@npm:2.0.8"
+  checksum: 10c0/96d7f1c6988c284886e7f2caea87415a6ebc779dc24c3f102cfa83b7d924da1363176b09c4600d11a1205bf2d819f35515c542a4bbcbe2fe13c1d7833376d203
   languageName: node
   linkType: hard
 
@@ -1805,8 +1805,8 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/util": "npm:^12.0.0"
     "@microsoft/api-extractor": "npm:7.55.0"
-    "@tsconfig/node22": "npm:22.0.2"
-    "@tsconfig/strictest": "npm:2.0.7"
+    "@tsconfig/node22": "npm:22.0.3"
+    "@tsconfig/strictest": "npm:2.0.8"
     "@types/node": "npm:22.19.1"
     "@types/react": "npm:^19.0.0"
     next: "npm:15.5.6"
