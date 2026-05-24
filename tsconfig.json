@@ -9,6 +9,7 @@
 		"noEmit": false,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
+		"rootDir": "src",
 		"outDir": "dist",
 		"target": "es2017",
 		"module": "node16"
