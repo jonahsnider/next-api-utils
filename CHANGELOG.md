@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.0.0](https://github.com/jonahsnider/next-api-utils/compare/next-api-utils-v3.0.1...next-api-utils-v4.0.0) (2026-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to Zod v4
+* remove validateRequest()
+* upgrade to Next.js v15 ([#33](https://github.com/jonahsnider/next-api-utils/issues/33))
+
+### Features
+
+* remove validateRequest() ([6a82b1f](https://github.com/jonahsnider/next-api-utils/commit/6a82b1f3185c9fc3e6b25536d3b4a873456c8673))
+* upgrade to Next.js v15 ([#33](https://github.com/jonahsnider/next-api-utils/issues/33)) ([66672fa](https://github.com/jonahsnider/next-api-utils/commit/66672faea0f6afcee358ab9cb860fe6d80c8f602))
+* upgrade to Zod v4 ([f96b80d](https://github.com/jonahsnider/next-api-utils/commit/f96b80dfa02494ceafd1926e5a7a4ca0c7af928c))
+
+
+### Bug Fixes
+
+* fix Yarn lockfile ([419e104](https://github.com/jonahsnider/next-api-utils/commit/419e1048d53c05a8836f63c794edd6f2e46b9fc5))
+* mark Zod as peer dependency ([81918b5](https://github.com/jonahsnider/next-api-utils/commit/81918b50e4539ded46801958467405c62f8f352f))
+* update version compatibility table in README ([3c5818e](https://github.com/jonahsnider/next-api-utils/commit/3c5818e47ee9a7c5a93e7a7bcd473a9ffda579ae))
+
 ## [3.0.1](https://github.com/jonahsnider/next-api-utils/compare/v3.0.0...v3.0.1) (2025-07-10)
 
 
