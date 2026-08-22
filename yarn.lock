@@ -846,10 +846,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node22@npm:22.0.6":
-  version: 22.0.6
-  resolution: "@tsconfig/node22@npm:22.0.6"
-  checksum: 10c0/595f70f90820a16b34db5e192ac47f66567b694c14a2249e24009df27214fab665f6634c6346ad1b6aa2d222aee7377edfeba7821f0076cba075bc79a0be728c
+"@tsconfig/node24@npm:24.0.0":
+  version: 24.0.0
+  resolution: "@tsconfig/node24@npm:24.0.0"
+  checksum: 10c0/50f93181a84aab782a56a5fed6ca90c6b19ab94b91a33c8921f2b2e6f561d26f13c36af302402e8320d615a325dee5dbf57f5f5d4853d1aee54c6afc542f6131
   languageName: node
   linkType: hard
 
@@ -1833,7 +1833,7 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/util": "npm:^12.0.0"
     "@microsoft/api-extractor": "npm:7.59.0"
-    "@tsconfig/node22": "npm:22.0.6"
+    "@tsconfig/node24": "npm:24.0.0"
     "@tsconfig/strictest": "npm:2.0.8"
     "@types/node": "npm:24.13.3"
     "@types/react": "npm:^19.0.0"
