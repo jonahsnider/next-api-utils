@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/jonahsnider/next-api-utils/compare/v3.0.1...v3.0.2) (2026-08-30)
+
+
+### Bug Fixes
+
+* enable trusted publishing ([a6a98fc](https://github.com/jonahsnider/next-api-utils/commit/a6a98fcfc4cab404a8a3fc2f08d3aebb92a36a66))
+
 ## [3.0.1](https://github.com/jonahsnider/next-api-utils/compare/v3.0.0...v3.0.1) (2025-07-10)
 
 
