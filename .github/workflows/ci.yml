@@ -30,7 +30,7 @@ jobs:
         with:
           cache: true
       - name: Generate docs
-        run: pnpm docs
+        run: pnpm run docs
   lint:
     name: Lint
 
