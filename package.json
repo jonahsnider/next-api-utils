@@ -15,7 +15,6 @@
 		"type": "git",
 		"url": "git+https://github.com/jonahsnider/next-api-utils.git"
 	},
-	"homepage": "https://next-api-utils.jonahsnider.dev",
 	"license": "Apache-2.0",
 	"author": {
 		"name": "Jonah Snider",
@@ -83,8 +82,15 @@
 			"optional": false
 		}
 	},
+	"packageManager": "pnpm@12.0.0",
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.x",
+			"onFail": "download"
+		}
+	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"packageManager": "yarn@4.18.0"
+	}
 }
