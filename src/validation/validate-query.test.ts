@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import querystring from 'node:querystring';
 import { test } from 'node:test';
 import { z } from 'zod';
-import { InvalidQueryParametersException } from './server.js';
-import { extractQuery, validateQuery } from './validate-query.js';
+import { InvalidQueryParametersException } from './server.ts';
+import { extractQuery, validateQuery } from './validate-query.ts';
 
 test('validates query parameters', () => {
 	const request = {

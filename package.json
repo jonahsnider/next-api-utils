@@ -23,17 +23,17 @@
 	},
 	"type": "module",
 	"exports": {
-		".": {
+		"./default": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		},
-		"./server": {
-			"types": "./dist/server.d.ts",
-			"import": "./dist/server.js"
+			"default": "./dist/index.js"
 		},
 		"./client": {
 			"types": "./dist/client.d.ts",
-			"import": "./dist/client.js"
+			"default": "./dist/client.js"
+		},
+		"./server": {
+			"types": "./dist/server.d.ts",
+			"default": "./dist/server.js"
 		}
 	},
 	"main": "./dist/index.js",
@@ -43,8 +43,7 @@
 		"!dist/**/*.test.{js,d.ts}"
 	],
 	"scripts": {
-		"prebuild": "rm -rf dist",
-		"build": "tsc",
+		"build": "zshy",
 		"docs": "typedoc",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --write --unsafe",
@@ -62,7 +61,7 @@
 		"@biomejs/biome": "2.5.11",
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@microsoft/api-extractor": "7.59.0",
-		"@tsconfig/node22": "22.0.6",
+		"@tsconfig/next": "2.0.6",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.3",
 		"@types/react": "^19.0.0",
@@ -71,7 +70,8 @@
 		"tsx": "4.23.12",
 		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
-		"zod": "4.5.2"
+		"zod": "4.5.2",
+		"zshy": "0.7.3"
 	},
 	"peerDependencies": {
 		"next": "^15 || ^16.0.0",
@@ -92,5 +92,13 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"zshy": {
+		"cjs": false,
+		"exports": {
+			"./default": "./src/index.ts",
+			"./client": "./src/client.ts",
+			"./server": "./src/server.ts"
+		}
 	}
 }

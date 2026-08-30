@@ -1,7 +1,7 @@
 import { Http } from '@jonahsnider/util';
 import { z } from 'zod';
-import { ExceptionCode } from '../enums/exceptions.enum.js';
-import { BaseValidationException } from './base-validation.exception.js';
+import { ExceptionCode } from '../enums/exceptions.enum.ts';
+import { BaseValidationException } from './base-validation.exception.ts';
 
 /**
  * An exception that is thrown when {@link validateBody} fails.

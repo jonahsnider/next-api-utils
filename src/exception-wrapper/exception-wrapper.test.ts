@@ -2,9 +2,9 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { NextRequest, NextResponse } from 'next/server.js';
 import { z } from 'zod';
-import { TO_RESPONSE } from '../constants.js';
-import { validateQuery } from '../server.js';
-import { type BaseException, ExceptionWrapper, type IsException } from './exception-wrapper.js';
+import { TO_RESPONSE } from '../constants.ts';
+import { validateQuery } from '../server.ts';
+import { type BaseException, ExceptionWrapper, type IsException } from './exception-wrapper.ts';
 
 class CustomException extends Error implements BaseException<unknown> {
 	[TO_RESPONSE](): NextResponse<unknown> {

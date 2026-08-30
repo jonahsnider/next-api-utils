@@ -1,7 +1,7 @@
 import type { ParsedUrlQuery } from 'node:querystring';
 import type { NextRequest } from 'next/server.js';
 import type { z } from 'zod';
-import { InvalidQueryParametersException } from './exceptions/invalid-query-parameters.exception.js';
+import { InvalidQueryParametersException } from './exceptions/invalid-query-parameters.exception.ts';
 
 /** @internal */
 export function extractQuery(url: URL): ParsedUrlQuery {

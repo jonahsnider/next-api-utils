@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { z } from 'zod';
-import { TO_RESPONSE } from '../../constants.js';
-import { ExceptionCode } from '../enums/exceptions.enum.js';
-import { InvalidPathParametersException } from './invalid-path-parameters.exception.js';
+import { TO_RESPONSE } from '../../constants.ts';
+import { ExceptionCode } from '../enums/exceptions.enum.ts';
+import { InvalidPathParametersException } from './invalid-path-parameters.exception.ts';
 
 test('serializes to a NextResponse', async () => {
 	const schema = z.object({ a: z.string() });

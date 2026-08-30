@@ -1,20 +1,13 @@
 {
 	"compilerOptions": {
-		"allowImportingTsExtensions": false,
+		"allowImportingTsExtensions": true,
 		"declaration": true,
-		"exactOptionalPropertyTypes": false,
-		"inlineSourceMap": true,
-		"inlineSources": true,
-		"lib": ["dom", "dom.iterable", "esnext"],
+		"incremental": false,
 		"noEmit": false,
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-		"rootDir": "src",
 		"outDir": "dist",
-		"target": "es2017",
-		"module": "node16"
+		"rootDir": "src",
+		"rewriteRelativeImportExtensions": true
 	},
-	"exclude": ["node_modules"],
-	"extends": ["@tsconfig/node22", "@tsconfig/strictest"],
-	"include": ["src", "./next-env.d.ts"]
+	"extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/next/tsconfig.json"],
+	"include": ["src"]
 }

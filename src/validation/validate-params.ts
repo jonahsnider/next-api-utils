@@ -1,6 +1,6 @@
 import type { z } from 'zod';
-import type { NextRouteHandlerSegmentData } from '../interfaces/next-route-handler-segment-data.interface.js';
-import { InvalidPathParametersException } from './exceptions/invalid-path-parameters.exception.js';
+import type { NextRouteHandlerSegmentData } from '../interfaces/next-route-handler-segment-data.interface.ts';
+import { InvalidPathParametersException } from './exceptions/invalid-path-parameters.exception.ts';
 
 /**
  * Validate the path parameters in a request with a Zod schema.

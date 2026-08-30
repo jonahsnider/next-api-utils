@@ -1,8 +1,8 @@
-export * from './client.js';
-export * from './exceptions/base-validation.exception.js';
-export * from './exceptions/invalid-body.exception.js';
-export * from './exceptions/invalid-path-parameters.exception.js';
-export * from './exceptions/invalid-query-parameters.exception.js';
-export * from './validate-body.js';
-export * from './validate-params.js';
-export { validateQuery } from './validate-query.js';
+export * from './client.ts';
+export * from './exceptions/base-validation.exception.ts';
+export * from './exceptions/invalid-body.exception.ts';
+export * from './exceptions/invalid-path-parameters.exception.ts';
+export * from './exceptions/invalid-query-parameters.exception.ts';
+export * from './validate-body.ts';
+export * from './validate-params.ts';
+export { validateQuery } from './validate-query.ts';

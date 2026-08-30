@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server.js';
 import type { z } from 'zod';
-import { InvalidBodyException } from './exceptions/invalid-body.exception.js';
+import { InvalidBodyException } from './exceptions/invalid-body.exception.ts';
 
 /**
  * Validate the body in a request with a Zod schema.

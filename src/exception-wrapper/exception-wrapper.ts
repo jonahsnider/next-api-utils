@@ -1,8 +1,8 @@
 import type { NextResponse } from 'next/server.js';
-import { TO_RESPONSE } from '../constants.js';
-import type { NextRouteHandler } from '../interfaces/next-route-handler.interface.js';
-import type { NextRouteHandlerSegmentData } from '../server.js';
-import { BaseValidationException } from '../validation/exceptions/base-validation.exception.js';
+import { TO_RESPONSE } from '../constants.ts';
+import type { NextRouteHandler } from '../interfaces/next-route-handler.interface.ts';
+import type { NextRouteHandlerSegmentData } from '../server.ts';
+import { BaseValidationException } from '../validation/exceptions/base-validation.exception.ts';
 
 /**
  * A base interface for representing known application exceptions which should be sent to the client when thrown.

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { QueryBooleanSchema } from './query-boolean.dto.js';
+import { QueryBooleanSchema } from './query-boolean.dto.ts';
 
 test('parses booleans', () => {
 	assert.equal(QueryBooleanSchema.parse(true), true);

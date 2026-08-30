@@ -1,5 +1,5 @@
 import type { NextRequest, NextResponse } from 'next/server.js';
-import type { NextRouteHandlerSegmentData } from './next-route-handler-segment-data.interface.js';
+import type { NextRouteHandlerSegmentData } from './next-route-handler-segment-data.interface.ts';
 
 /**
  * A type for representing a Next.js API route handler function.

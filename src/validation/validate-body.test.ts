@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { z } from 'zod';
-import { InvalidBodyException } from './server.js';
-import { validateBody } from './validate-body.js';
+import { InvalidBodyException } from './server.ts';
+import { validateBody } from './validate-body.ts';
 
 test('validates request body', async () => {
 	const request = new Request('http://localhost/', {

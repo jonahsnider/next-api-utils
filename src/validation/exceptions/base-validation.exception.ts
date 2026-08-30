@@ -1,8 +1,8 @@
 import { Http } from '@jonahsnider/util';
 import { NextResponse } from 'next/server.js';
-import { TO_RESPONSE } from '../../constants.js';
-import type { ValidationExceptionSchema } from '../dtos/exception.dto.js';
-import type { ExceptionCode } from '../enums/exceptions.enum.js';
+import { TO_RESPONSE } from '../../constants.ts';
+import type { ValidationExceptionSchema } from '../dtos/exception.dto.ts';
+import type { ExceptionCode } from '../enums/exceptions.enum.ts';
 
 /**
  * The base class that exceptions thrown during validation inherit from.

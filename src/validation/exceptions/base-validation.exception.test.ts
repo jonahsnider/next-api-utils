@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { TO_RESPONSE } from '../../constants.js';
-import { ExceptionCode } from '../enums/exceptions.enum.js';
-import { BaseValidationException } from './base-validation.exception.js';
+import { TO_RESPONSE } from '../../constants.ts';
+import { ExceptionCode } from '../enums/exceptions.enum.ts';
+import { BaseValidationException } from './base-validation.exception.ts';
 
 test('serializes to a NextResponse', async () => {
 	const exception = new BaseValidationException('message', 400, ExceptionCode.InvalidBody);

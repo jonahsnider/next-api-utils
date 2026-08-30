@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ExceptionCode } from '../enums/exceptions.enum.js';
+import { ExceptionCode } from '../enums/exceptions.enum.ts';
 
 /**
  * The schema for {@link BaseValidationException}.
