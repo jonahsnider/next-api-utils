@@ -120,8 +120,8 @@ importers:
         specifier: 2.5.11
         version: 2.5.11
       '@jonahsnider/prettier-config':
-        specifier: 1.1.2
-        version: 1.1.2
+        specifier: 2.0.1
+        version: 2.0.1
       '@microsoft/api-extractor':
         specifier: 7.59.0
         version: 7.59.0(@types/node@24.13.3)
@@ -545,8 +545,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@jonahsnider/prettier-config@1.1.2':
-    resolution: {integrity: sha512-h36m/4784WPsWDVBzuYKjWGdI+jybNuNq6Yh7n4fLq/BKLTmDo2IBbhJ6DelCCGDy0MRvkFsj4QvXdJWmkpICQ==}
+  '@jonahsnider/prettier-config@2.0.1':
+    resolution: {integrity: sha512-Xdj/mWE/Edxhs+TfIyiAhNxI+thaCmqtqFRz9BB6ULoSO0R9B1gAvSimJyXVjEZof6ju4wFnxaoOE9AwqaMUqw==}
 
   '@jonahsnider/util@12.0.0':
     resolution: {integrity: sha512-83YFLqiIGEkLSOWgb+DXgNOBB6I5Bha3815CIjyJ6++b5EgRoTfGpHK/NEMWzzqZ695NZWetZ/WFTy2OuUxzww==}
@@ -700,8 +700,9 @@ packages:
   '@types/node@24.13.3':
     resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
 
-  '@types/prettier@2.7.3':
-    resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
+  '@types/prettier@3.0.0':
+    resolution: {integrity: sha512-mFMBfMOz8QxhYVbuINtswBp9VL2b4Y0QqYHwqLz3YbgtfAcat2Dl6Y1o4e22S/OVE6Ebl9m7wWiMT2lSbAs1wA==}
+    deprecated: This is a stub types definition. prettier provides its own type definitions, so you do not need this installed.
 
   '@types/react@19.2.18':
     resolution: {integrity: sha512-AnzbBERsrLKtk2XSfTbYRLjQPdy116Sty4q+T+Bp3IC4l6jNBvreVPAHmpq9qhXQM7CXZPjLVmGMw9sy+hxQ3w==}
@@ -1090,9 +1091,14 @@ packages:
     resolution: {integrity: sha512-g50586zr4bZmwFiTlflMu8E0bDTb5I5gertgwAKmsdUlTQIhZtunzUlD1WSzwcVWPoAVpsrA6vlfCD7oXvRwgg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier-config-xo@2.0.0:
-    resolution: {integrity: sha512-eVy/64JWpXYEXPMAgpEcpct3TZQurmwxPipx78GqRG6gQtLT6hCYyMUgMzoVz5W3IkxLN371xGVKHNU1MY6FTA==}
+  prettier-config-xo@3.0.0:
+    resolution: {integrity: sha512-OH/DkWRnF3PSjBecODDqKsi7j5/WrMwovfPTfs3Tq5tvONxJCsWQ8qIJzX7H+kf3HL/2BQ7i9Y/e702s0ZfMTg==}
     engines: {node: '>=10.13.0'}
+
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   punycode.js@2.3.1:
     resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
@@ -1492,10 +1498,10 @@ snapshots:
   '@img/sharp-win32-x64@0.35.4':
     optional: true
 
-  '@jonahsnider/prettier-config@1.1.2':
+  '@jonahsnider/prettier-config@2.0.1':
     dependencies:
-      '@types/prettier': 2.7.3
-      prettier-config-xo: 2.0.0
+      '@types/prettier': 3.0.0
+      prettier-config-xo: 3.0.0
 
   '@jonahsnider/util@12.0.0': {}
 
@@ -1649,7 +1655,9 @@ snapshots:
     dependencies:
       undici-types: 7.18.2
 
-  '@types/prettier@2.7.3': {}
+  '@types/prettier@3.0.0':
+    dependencies:
+      prettier: 3.9.6
 
   '@types/react@19.2.18':
     dependencies:
@@ -1903,7 +1911,9 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-config-xo@2.0.0: {}
+  prettier-config-xo@3.0.0: {}
+
+  prettier@3.9.6: {}
 
   punycode.js@2.3.1: {}
 
