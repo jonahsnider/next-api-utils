@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0](https://github.com/jonahsnider/next-api-utils/compare/v3.0.2...v3.1.0) (2026-09-03)
+
+
+### Features
+
+* use z.stringbool() instead of yn package for QueryBooleanSchema ([58cc185](https://github.com/jonahsnider/next-api-utils/commit/58cc1851559237d62c3fb9de0e9ca63cd9a9e385))
+
+
+### Bug Fixes
+
+* modernize publishing config ([1203330](https://github.com/jonahsnider/next-api-utils/commit/1203330d35bad77d0c8f487d7de84385e3e395ee))
+
 ## [3.0.2](https://github.com/jonahsnider/next-api-utils/compare/v3.0.1...v3.0.2) (2026-08-30)
 
 
