@@ -70,7 +70,7 @@ export type NextRouteHandlerSegmentData<PathParameters extends Record<string, st
 };
 
 // @public
-export const QueryBooleanSchema: z.ZodPipe<z.ZodPipe<z.ZodUnion<[z.ZodString, z.ZodBoolean]>, z.ZodTransform<boolean | undefined, string | boolean>>, z.ZodBoolean>;
+export const QueryBooleanSchema: z.ZodUnion<readonly [z.ZodBoolean, z.ZodPipe<z.ZodLiteral<"">, z.ZodTransform<boolean, "">>, z.ZodCodec<z.ZodString, z.ZodBoolean>]>;
 
 // @public
 export type QueryBooleanSchema = z.infer<typeof QueryBooleanSchema>;
