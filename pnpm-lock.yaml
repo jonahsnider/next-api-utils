@@ -110,8 +110,8 @@ importers:
   .:
     dependencies:
       '@jonahsnider/util':
-        specifier: ^12.0.0
-        version: 12.0.0
+        specifier: ^13.0.0
+        version: 13.0.0
     devDependencies:
       '@biomejs/biome':
         specifier: 2.5.11
@@ -545,8 +545,8 @@ packages:
   '@jonahsnider/prettier-config@2.0.1':
     resolution: {integrity: sha512-Xdj/mWE/Edxhs+TfIyiAhNxI+thaCmqtqFRz9BB6ULoSO0R9B1gAvSimJyXVjEZof6ju4wFnxaoOE9AwqaMUqw==}
 
-  '@jonahsnider/util@12.0.0':
-    resolution: {integrity: sha512-83YFLqiIGEkLSOWgb+DXgNOBB6I5Bha3815CIjyJ6++b5EgRoTfGpHK/NEMWzzqZ695NZWetZ/WFTy2OuUxzww==}
+  '@jonahsnider/util@13.0.0':
+    resolution: {integrity: sha512-YqwYSSmrVvUPJfg4CeqJ1wO2guc8aHKKNEAUMwu1OR8w2MUKqZi70jyjD98WN/6Vu1JEQDBoAPpkbkpCCmuV4Q==}
     engines: {node: '>=16'}
 
   '@microsoft/api-extractor-model@7.33.11':
@@ -1496,7 +1496,7 @@ snapshots:
       '@types/prettier': 3.0.0
       prettier-config-xo: 3.0.0
 
-  '@jonahsnider/util@12.0.0': {}
+  '@jonahsnider/util@13.0.0': {}
 
   '@microsoft/api-extractor-model@7.33.11(@types/node@24.13.3)':
     dependencies:
