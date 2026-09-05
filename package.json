@@ -81,7 +81,7 @@
 			"optional": false
 		}
 	},
-	"packageManager": "pnpm@12.3.1",
+	"packageManager": "pnpm@12.3.2",
 	"devEngines": {
 		"runtime": {
 			"name": "node",
