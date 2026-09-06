@@ -23,7 +23,7 @@
 	},
 	"type": "module",
 	"exports": {
-		"./default": {
+		".": {
 			"types": "./dist/index.d.ts",
 			"default": "./dist/index.js"
 		},
@@ -95,9 +95,10 @@
 	"zshy": {
 		"cjs": false,
 		"exports": {
-			"./default": "./src/index.ts",
+			".": "./src/index.ts",
 			"./client": "./src/client.ts",
 			"./server": "./src/server.ts"
 		}
-	}
+	},
+	"module": "./dist/index.js"
 }
