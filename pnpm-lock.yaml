@@ -156,8 +156,8 @@ importers:
         specifier: 4.5.4
         version: 4.5.4
       zshy:
-        specifier: 0.7.3
-        version: 0.7.3(typescript@6.0.3)
+        specifier: 0.8.0
+        version: 0.8.0(typescript@6.0.3)
 
 packages:
 
@@ -1248,8 +1248,8 @@ packages:
   zod@4.5.4:
     resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
 
-  zshy@0.7.3:
-    resolution: {integrity: sha512-MLCAh1mwonX25z58SJEAvHGY8j4xSMsNGM1XCgYwYZgBWEO/4YeH1u+EejJlUbHbz21N2YQ0Dgg8WznKMEU26w==}
+  zshy@0.8.0:
+    resolution: {integrity: sha512-KV0vW7y98w0spcIE08NgeIQtNT0TwaMYLNWn6WcS0QBO+j7DgDONLPjwivUEnSM8DzIPM5e6OAK4BezWqcYneA==}
     hasBin: true
     peerDependencies:
       typescript: '>5.5.0'
@@ -2047,7 +2047,7 @@ snapshots:
 
   zod@4.5.4: {}
 
-  zshy@0.7.3(typescript@6.0.3):
+  zshy@0.8.0(typescript@6.0.3):
     dependencies:
       arg: 5.0.2
       fast-glob: 3.3.3
