@@ -3,8 +3,8 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  build:
-    name: Build
+  build-and-test:
+    name: Build and test
 
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -16,65 +16,14 @@ jobs:
         uses: pnpm/setup@v3
         with:
           cache: true
-  docs:
-    name: Generate docs
-
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Checkout Git repository
-        uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
-        with:
-          cache: true
-      - name: Generate docs
-        run: pnpm run docs
-  lint:
-    name: Lint
-
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Checkout Git repository
-        uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
-        with:
-          cache: true
-      - name: Lint
-        run: pnpm lint
-  test:
-    name: Test
-
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Checkout Git repository
-        uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
-        with:
-          cache: true
-      - name: Test
-        run: pnpm test:coverage
-  validate-api:
-    name: Validate API
-
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Checkout Git repository
-        uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
-        with:
-          cache: true
-      - name: Build package
-        run: pnpm build
+      - parallel:
+          - name: Generate docs
+            run: pnpm run docs
+          - name: Lint
+            run: pnpm lint
+          - name: Test
+            run: pnpm test:coverage
+          - name: Build package
+            run: pnpm build
       - name: Validate API
         run: pnpm validate-api
