@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { test } from 'node:test';
+import { test } from 'vite-plus/test';
 import { z } from 'zod';
 import { InvalidPathParametersException } from './server.ts';
 import { validateParams } from './validate-params.ts';
@@ -25,7 +25,7 @@ test('validates path parameters', async () => {
 	});
 });
 
-test('throws an exception if the path parameters are invalid', () => {
+test('throws an exception if the path parameters are invalid', async () => {
 	const segmentData = {
 		params: Promise.resolve({
 			a: '1',
@@ -38,5 +38,5 @@ test('throws an exception if the path parameters are invalid', () => {
 		b: z.number(),
 	});
 
-	assert.rejects(() => validateParams(segmentData, schema), InvalidPathParametersException);
+	await assert.rejects(() => validateParams(segmentData, schema), InvalidPathParametersException);
 });

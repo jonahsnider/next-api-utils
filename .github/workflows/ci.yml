@@ -2,6 +2,9 @@ name: CI
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   build-and-test:
     name: Build and test
@@ -12,18 +15,20 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.21.2
         with:
           cache: true
       - parallel:
           - name: Generate docs
             run: pnpm run docs
-          - name: Lint
-            run: pnpm lint
+          - name: Check formatting, lint, and types
+            run: vp check
           - name: Test
-            run: pnpm test:coverage
+            run: vp test run --coverage
+          - name: Check unused code and dependencies
+            run: vp exec knip
           - name: Build package
-            run: pnpm build
+            run: vp pack
       - name: Validate API
         run: pnpm validate-api

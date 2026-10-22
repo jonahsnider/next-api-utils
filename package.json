@@ -11,17 +11,24 @@
 	"bugs": {
 		"url": "https://github.com/jonahsnider/next-api-utils/issues"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jonahsnider/next-api-utils.git"
-	},
 	"license": "Apache-2.0",
 	"author": {
 		"name": "Jonah Snider",
 		"email": "jonah@jonahsnider.com",
 		"url": "https://jonahsnider.com"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jonahsnider/next-api-utils.git"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.{js,d.ts}"
+	],
 	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -36,41 +43,42 @@
 			"default": "./dist/server.js"
 		}
 	},
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"files": [
-		"dist",
-		"!dist/**/*.test.{js,d.ts}"
-	],
-	"scripts": {
-		"build": "zshy",
-		"docs": "typedoc",
-		"lint": "biome check .",
-		"lint:fix": "biome check . --write --unsafe",
-		"test": "tsx --test src/**/*.test.ts",
-		"test:coverage": "mkdir -p coverage && tsx --test-reporter=lcov --experimental-test-coverage --test-reporter-destination=coverage/lcov.info --test src/**/*.test.ts",
-		"validate-api": "api-extractor run",
-		"validate-api:local": "api-extractor run --local --verbose"
+	"publishConfig": {
+		"access": "public"
 	},
-	"prettier": "@jonahsnider/prettier-config",
+	"scripts": {
+		"build": "vp pack",
+		"docs": "typedoc",
+		"lint": "vp lint",
+		"lint:fix": "vp lint --fix",
+		"test": "vp test run",
+		"test:coverage": "vp test run --coverage",
+		"validate-api": "api-extractor run",
+		"validate-api:local": "api-extractor run --local --verbose",
+		"check": "vp check",
+		"format": "vp fmt --check",
+		"format:fix": "vp fmt",
+		"knip": "knip",
+		"prepare": "vp config"
+	},
 	"dependencies": {
 		"@jonahsnider/util": "^12.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.15",
-		"@jonahsnider/prettier-config": "2.0.2",
 		"@microsoft/api-extractor": "7.59.4",
-		"@tsconfig/next": "2.0.6",
+		"@tsconfig/recommended": "1.0.13",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.19.2",
-		"@types/react": "^19.0.0",
+		"@types/react": "19.3.0",
+		"@vitest/coverage-v8": "catalog:",
+		"knip": "6.42.1",
 		"next": "16.4.2",
 		"react": "19.3.1",
-		"tsx": "4.23.15",
 		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
-		"zod": "4.6.7",
-		"zshy": "0.8.1"
+		"vite-plus": "catalog:",
+		"vitest": "catalog:",
+		"zod": "4.6.7"
 	},
 	"peerDependencies": {
 		"next": "^15 || ^16.0.0",
@@ -81,7 +89,6 @@
 			"optional": false
 		}
 	},
-	"packageManager": "pnpm@12.15.0",
 	"devEngines": {
 		"runtime": {
 			"name": "node",
@@ -89,16 +96,5 @@
 			"onFail": "warn"
 		}
 	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"zshy": {
-		"cjs": false,
-		"exports": {
-			".": "./src/index.ts",
-			"./client": "./src/client.ts",
-			"./server": "./src/server.ts"
-		}
-	},
-	"module": "./dist/index.js"
+	"packageManager": "pnpm@12.15.0"
 }

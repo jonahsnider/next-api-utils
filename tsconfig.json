@@ -1,13 +1,10 @@
 {
 	"compilerOptions": {
 		"allowImportingTsExtensions": true,
-		"declaration": true,
-		"incremental": false,
-		"noEmit": false,
-		"outDir": "dist",
-		"rootDir": "src",
-		"rewriteRelativeImportExtensions": true
+		"module": "NodeNext",
+		"noEmit": true,
+		"target": "ESNext"
 	},
-	"extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/next/tsconfig.json"],
+	"extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/recommended/tsconfig.json"],
 	"include": ["src"]
 }

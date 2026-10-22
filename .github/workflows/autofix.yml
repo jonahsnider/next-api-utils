@@ -1,0 +1,23 @@
+name: autofix.ci
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    name: Autofix
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: voidzero-dev/setup-vp@v1.21.2
+        with:
+          cache: true
+      - run: vp check --fix
+        continue-on-error: true
+      - name: Run autofix.ci
+        uses: autofix-ci/action@v1
+        with:
+          commit-message: 'refactor: apply automatic fixes'

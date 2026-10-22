@@ -19,9 +19,6 @@ jobs:
         uses: googleapis/release-please-action@v5
         id: release
         with:
-          # this assumes that you have created a personal access token
-          # (PAT) and configured it as a GitHub action secret named
-          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
           token: ${{ secrets.GITHUB_TOKEN }}
       # The logic below handles the npm publication:
       - name: Checkout Git repository
@@ -29,8 +26,8 @@ jobs:
         # these if statements ensure that a publication only occurs when
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.21.2
         with:
           cache: true
         if: ${{ steps.release.outputs.release_created }}
@@ -38,9 +35,9 @@ jobs:
         run: pnpm test
         if: ${{ steps.release.outputs.release_created }}
       - name: Build
-        run: pnpm build
+        run: vp pack
         if: ${{ steps.release.outputs.release_created }}
-      - name: Generate TypeScript declaration rollup
+      - name: Validate API
         run: pnpm validate-api
         if: ${{ steps.release.outputs.release_created }}
       - name: Publish

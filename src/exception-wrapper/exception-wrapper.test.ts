@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { test } from 'node:test';
+import { test } from 'vite-plus/test';
 import { NextRequest, NextResponse } from 'next/server.js';
 import { z } from 'zod';
 import { TO_RESPONSE } from '../constants.ts';

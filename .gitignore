@@ -230,3 +230,4 @@ docs
 
 # Local Netlify folder
 .netlify
+.vitest/
