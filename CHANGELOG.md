@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/jonahsnider/next-api-utils/compare/v3.1.1...v3.1.2) (2026-10-22)
+
+
+### Bug Fixes
+
+* set sideEffects: false in package.json ([5285141](https://github.com/jonahsnider/next-api-utils/commit/5285141fcce476ff657e1feb414f6ef3010e4fb6))
+
 ## [3.1.1](https://github.com/jonahsnider/next-api-utils/compare/v3.1.0...v3.1.1) (2026-09-06)
 
 
