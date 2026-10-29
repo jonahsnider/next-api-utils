@@ -63,7 +63,7 @@
 		"prepare": "vp config"
 	},
 	"dependencies": {
-		"@jonahsnider/util": "^12.0.0"
+		"@jonahsnider/util": "^13.0.0"
 	},
 	"devDependencies": {
 		"@microsoft/api-extractor": "7.60.0",
