@@ -67,8 +67,8 @@
 	},
 	"devDependencies": {
 		"@microsoft/api-extractor": "7.60.1",
-		"@tsconfig/recommended": "1.0.13",
-		"@tsconfig/strictest": "2.0.8",
+		"@tsconfig/recommended": "1.0.14",
+		"@tsconfig/strictest": "2.0.9",
 		"@types/node": "26.6.6",
 		"@types/react": "19.3.0",
 		"@vitest/coverage-v8": "catalog:",
